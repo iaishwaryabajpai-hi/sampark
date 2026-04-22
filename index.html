@@ -632,6 +632,16 @@
           <div class="gc-info"><h4>Quick Math</h4><p>Solve simple equations fast</p></div>
           <div class="gc-play">Play</div>
         </div>
+        <div class="game-card" onclick="openGame('wordle')">
+          <div class="gc-icon" style="background:rgba(139,127,240,.15);color:#A89DF5">📝</div>
+          <div class="gc-info"><h4>Word Guess</h4><p>Guess the 5-letter word in 6 tries</p></div>
+          <div class="gc-play">Play</div>
+        </div>
+        <div class="game-card" onclick="openGame('g2048')">
+          <div class="gc-icon" style="background:rgba(232,160,32,.15);color:#F0B443">🔢</div>
+          <div class="gc-info"><h4>2048 Puzzle</h4><p>Slide and merge tiles to win</p></div>
+          <div class="gc-play">Play</div>
+        </div>
       </div>
 
       <div id="game-memory" style="display:none">
@@ -665,6 +675,37 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" id="mathOpts"></div>
         </div>
       </div>
+
+      <div id="game-wordle" style="display:none">
+        <div style="padding:20px 20px 0;display:flex;align-items:center;gap:10px">
+          <button class="btn bgh" style="height:32px;padding:0 12px" onclick="closeGame()">&larr; Back</button>
+          <div style="flex:1;text-align:right;font-size:14px;font-weight:700" id="wordleStatus">Guess the word!</div>
+        </div>
+        <div style="padding:20px;max-width:300px;margin:0 auto;display:grid;grid-template-rows:repeat(6, 1fr);gap:8px" id="wordleGrid"></div>
+        <div id="wordleKeyboard" style="padding:10px 20px;display:flex;flex-direction:column;gap:6px"></div>
+        <div style="padding:10px 20px"><button class="btn bor" style="width:100%" onclick="initWordle()">Restart Game</button></div>
+      </div>
+
+      <div id="game-g2048" style="display:none">
+        <div style="padding:20px 20px 0;display:flex;align-items:center;gap:10px">
+          <button class="btn bgh" style="height:32px;padding:0 12px" onclick="closeGame()">&larr; Back</button>
+          <div style="flex:1"></div>
+          <div class="chip cor" style="font-size:12px">Score: <span id="score2048" style="margin-left:4px;font-weight:800">0</span></div>
+        </div>
+        <div style="padding:20px;text-align:center">
+          <div id="grid2048" class="grid-2048"></div>
+          <div class="controls-2048">
+            <button class="btn bgh" onclick="move2048('Up')">⬆️</button>
+            <div style="display:flex;justify-content:center;gap:40px;margin:8px 0">
+              <button class="btn bgh" onclick="move2048('Left')">⬅️</button>
+              <button class="btn bgh" onclick="move2048('Right')">➡️</button>
+            </div>
+            <button class="btn bgh" onclick="move2048('Down')">⬇️</button>
+          </div>
+          <button class="btn bor" style="width:100%;margin-top:20px" onclick="init2048()">Restart Game</button>
+        </div>
+      </div>
+
       <div style="height:20px"></div>
     </div>
   </div><!-- end .screens -->

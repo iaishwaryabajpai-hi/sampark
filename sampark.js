@@ -251,16 +251,22 @@ function openGame(id) {
   document.getElementById('game-memory').style.display = 'none';
   document.getElementById('game-tictactoe').style.display = 'none';
   document.getElementById('game-math').style.display = 'none';
+  document.getElementById('game-g2048').style.display = 'none';
+  document.getElementById('game-wordle').style.display = 'none';
   document.getElementById('game-'+id).style.display = 'block';
   if(id==='memory') initMemoryGame();
   if(id==='tictactoe') initTTT();
   if(id==='math') initMath();
+  if(id==='wordle') initWordle();
+  if(id==='g2048') init2048();
 }
 
 function closeGame() {
   document.getElementById('game-memory').style.display = 'none';
   document.getElementById('game-tictactoe').style.display = 'none';
   document.getElementById('game-math').style.display = 'none';
+  document.getElementById('game-g2048').style.display = 'none';
+  document.getElementById('game-wordle').style.display = 'none';
   document.getElementById('gameHub').style.display = 'flex';
 }
 
@@ -412,4 +418,210 @@ function answerMath(btn, isCorrect) {
       initMath();
     }, 1500);
   }
+}
+
+/* Word Guess Logic */
+const wordleWords = ['BRAIN', 'SMART', 'LEARN', 'STUDY', 'MATHS', 'BOOKS', 'PEACE', 'FOCUS', 'LOGIC', 'SKILL'];
+let targetWord = '';
+let wdlRow = 0;
+let wdlCol = 0;
+let wdlGrid = [];
+let wdlKeys = {};
+let wdlActive = false;
+
+function initWordle() {
+  targetWord = wordleWords[Math.floor(Math.random() * wordleWords.length)];
+  wdlRow = 0;
+  wdlCol = 0;
+  wdlGrid = Array(6).fill().map(() => Array(5).fill(''));
+  wdlActive = true;
+  document.getElementById('wordleStatus').innerText = 'Guess the word!';
+  
+  const gridDiv = document.getElementById('wordleGrid');
+  gridDiv.innerHTML = '';
+  for(let r=0; r<6; r++){
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'wdl-row';
+    for(let c=0; c<5; c++){
+      const cell = document.createElement('div');
+      cell.className = 'wdl-cell';
+      cell.id = `wdl-${r}-${c}`;
+      rowDiv.appendChild(cell);
+    }
+    gridDiv.appendChild(rowDiv);
+  }
+
+  const keys = [
+    ['Q','W','E','R','T','Y','U','I','O','P'],
+    ['A','S','D','F','G','H','J','K','L'],
+    ['ENTER','Z','X','C','V','B','N','M','⌫']
+  ];
+  const kbDiv = document.getElementById('wordleKeyboard');
+  kbDiv.innerHTML = '';
+  wdlKeys = {};
+  keys.forEach(row => {
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'wdl-keyrow';
+    row.forEach(key => {
+      const btn = document.createElement('button');
+      btn.className = 'wdl-key';
+      btn.innerText = key;
+      if(key === 'ENTER' || key === '⌫') btn.style.flex = '1.5';
+      btn.onclick = () => handleWdlKey(key);
+      rowDiv.appendChild(btn);
+      wdlKeys[key] = btn;
+    });
+    kbDiv.appendChild(rowDiv);
+  });
+}
+
+function handleWdlKey(k) {
+  if(!wdlActive) return;
+  if(k === '⌫') {
+    if(wdlCol > 0) { wdlCol--; wdlGrid[wdlRow][wdlCol] = ''; document.getElementById(`wdl-${wdlRow}-${wdlCol}`).innerText = ''; }
+  } else if(k === 'ENTER') {
+    if(wdlCol === 5) checkWdlRow();
+    else toast('⚠️','Too short', 'Enter a 5-letter word');
+  } else {
+    if(wdlCol < 5) { wdlGrid[wdlRow][wdlCol] = k; document.getElementById(`wdl-${wdlRow}-${wdlCol}`).innerText = k; wdlCol++; }
+  }
+}
+
+function checkWdlRow() {
+  const guess = wdlGrid[wdlRow].join('');
+  let tArr = targetWord.split('');
+  
+  for(let c=0; c<5; c++){
+    const cell = document.getElementById(`wdl-${wdlRow}-${c}`);
+    const ltr = wdlGrid[wdlRow][c];
+    if(ltr === targetWord[c]) {
+      cell.classList.add('correct');
+      wdlKeys[ltr].className = 'wdl-key correct';
+      tArr[c] = null;
+    }
+  }
+  for(let c=0; c<5; c++){
+    const cell = document.getElementById(`wdl-${wdlRow}-${c}`);
+    const ltr = wdlGrid[wdlRow][c];
+    if(!cell.classList.contains('correct')) {
+      const idx = tArr.indexOf(ltr);
+      if(idx > -1) {
+        cell.classList.add('present');
+        if(!wdlKeys[ltr].classList.contains('correct')) wdlKeys[ltr].className = 'wdl-key present';
+        tArr[idx] = null;
+      } else {
+        cell.classList.add('absent');
+        if(!wdlKeys[ltr].classList.contains('correct') && !wdlKeys[ltr].classList.contains('present')) wdlKeys[ltr].className = 'wdl-key absent';
+      }
+    }
+  }
+
+  if(guess === targetWord) {
+    document.getElementById('wordleStatus').innerText = 'Genius!';
+    toast('🏆', 'Word Master', 'You guessed the word! +40 XP');
+    badge('📝', 'Vocab Champ', 'Won a game of Word Guess', '+40 XP');
+    wdlActive = false;
+  } else {
+    wdlRow++;
+    wdlCol = 0;
+    if(wdlRow === 6) {
+      document.getElementById('wordleStatus').innerText = targetWord;
+      toast('💡', 'Game Over', `The word was ${targetWord}`);
+      wdlActive = false;
+    }
+  }
+}
+
+/* 2048 Logic */
+let g2048 = [];
+let score2048 = 0;
+let over2048 = false;
+
+function init2048() {
+  g2048 = Array(4).fill().map(() => Array(4).fill(0));
+  score2048 = 0;
+  over2048 = false;
+  document.getElementById('score2048').innerText = '0';
+  spawn2048();
+  spawn2048();
+  draw2048();
+}
+
+function spawn2048() {
+  let empty = [];
+  for(let r=0; r<4; r++) for(let c=0; c<4; c++) if(g2048[r][c]===0) empty.push({r,c});
+  if(empty.length > 0) {
+    let {r,c} = empty[Math.floor(Math.random() * empty.length)];
+    g2048[r][c] = Math.random() < 0.9 ? 2 : 4;
+  }
+}
+
+function draw2048() {
+  const grid = document.getElementById('grid2048');
+  grid.innerHTML = '';
+  for(let r=0; r<4; r++){
+    for(let c=0; c<4; c++){
+      const cell = document.createElement('div');
+      let val = g2048[r][c];
+      cell.className = 'cell-2048 ' + (val > 0 ? 't'+val : '');
+      cell.innerText = val > 0 ? val : '';
+      grid.appendChild(cell);
+    }
+  }
+  document.getElementById('score2048').innerText = score2048;
+}
+
+function move2048(dir) {
+  if(over2048) return;
+  let moved = false;
+  
+  let slide = (row) => {
+    let arr = row.filter(v => v);
+    for(let i=0; i<arr.length-1; i++){
+      if(arr[i] === arr[i+1]) { arr[i] *= 2; score2048 += arr[i]; arr[i+1] = 0; }
+    }
+    arr = arr.filter(v => v);
+    while(arr.length < 4) arr.push(0);
+    return arr;
+  };
+
+  let temp = JSON.stringify(g2048);
+
+  if(dir === 'Left' || dir === 'Right') {
+    for(let r=0; r<4; r++){
+      let row = g2048[r];
+      if(dir === 'Right') row.reverse();
+      row = slide(row);
+      if(dir === 'Right') row.reverse();
+      g2048[r] = row;
+    }
+  } else {
+    for(let c=0; c<4; c++){
+      let col = [g2048[0][c], g2048[1][c], g2048[2][c], g2048[3][c]];
+      if(dir === 'Down') col.reverse();
+      col = slide(col);
+      if(dir === 'Down') col.reverse();
+      for(let r=0; r<4; r++) g2048[r][c] = col[r];
+    }
+  }
+
+  if(temp !== JSON.stringify(g2048)) {
+    spawn2048();
+    draw2048();
+    check2048Over();
+  }
+}
+
+function check2048Over() {
+  for(let r=0; r<4; r++) for(let c=0; c<4; c++) {
+    if(g2048[r][c] === 2048 && !over2048) {
+      toast('🏆', '2048 Unlocked!', 'You reached the 2048 tile! +100 XP');
+      badge('🔢', 'Logic Master', 'Beat the 2048 game', '+100 XP');
+    }
+    if(g2048[r][c] === 0) return;
+    if(c<3 && g2048[r][c] === g2048[r][c+1]) return;
+    if(r<3 && g2048[r][c] === g2048[r+1][c]) return;
+  }
+  over2048 = true;
+  toast('💀', 'Game Over', `Final Score: ${score2048}`);
 }

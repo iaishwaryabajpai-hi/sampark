@@ -447,3 +447,23 @@ box-shadow:0 0 0 8px #151E2C,0 0 0 9px #0A1020,0 12px 48px rgba(0,0,0,.5),0 48px
 .math-opt:active{transform:scale(.95);background:var(--s2)}
 .math-opt.correct{background:rgba(0,200,150,.1);border-color:var(--mn);color:var(--mn)}
 .math-opt.wrong{background:rgba(240,74,94,.1);border-color:var(--rd);color:var(--rd)}
+
+/* Word Guess */
+.wdl-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.wdl-cell{aspect-ratio:1;border:2px solid var(--br);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:24px;font-weight:800;text-transform:uppercase;color:var(--tx)}
+.wdl-cell.correct{background:var(--mn);border-color:var(--mn);color:white}
+.wdl-cell.present{background:var(--or);border-color:var(--or);color:white}
+.wdl-cell.absent{background:var(--s3);border-color:var(--s3);color:var(--tx3)}
+.wdl-keyrow{display:flex;gap:6px;justify-content:center}
+.wdl-key{flex:1;height:44px;border-radius:var(--r8);background:var(--s1);border:1px solid var(--br);font-family:var(--fontb);font-weight:700;font-size:13px;color:var(--tx);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.wdl-key:active{transform:scale(.95)}
+.wdl-key.correct{background:var(--mn);border-color:var(--mn);color:white}
+.wdl-key.present{background:var(--or);border-color:var(--or);color:white}
+.wdl-key.absent{background:var(--s3);border-color:var(--s3);color:var(--tx3)}
+
+/* 2048 */
+.grid-2048{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:rgba(255,255,255,.05);padding:8px;border-radius:var(--r12);aspect-ratio:1;margin:0 auto;max-width:280px}
+.cell-2048{background:rgba(0,0,0,.3);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:20px;font-weight:800;color:white;transition:transform .1s, background .2s}
+.t2{background:#2A3648}.t4{background:#3B4B63}.t8{background:#F4692A}.t16{background:#E8A020}.t32{background:#00C896}.t64{background:#00A07A}.t128{background:#8B7FF0}.t256{background:#6054CC}.t512{background:#D4A020}.t1024{background:#C24B00}.t2048{background:#FFD700;color:#000;box-shadow:0 0 10px #FFD700}
+.controls-2048{margin-top:16px}
+.controls-2048 .btn{width:48px;height:48px;font-size:20px;padding:0;border-radius:var(--r12)}

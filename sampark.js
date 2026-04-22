@@ -3,7 +3,11 @@ function switchTab(id){
   document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));
   document.getElementById('s-'+id).classList.add('active');
   document.getElementById('ni-'+id).classList.add('on');
+  // close any open sub-panels when switching tabs
+  document.querySelectorAll('.sub-panel').forEach(p=>p.classList.remove('open'));
 }
+function openPanel(id){document.getElementById('panel-'+id).classList.add('open');}
+function closePanel(id){document.getElementById('panel-'+id).classList.remove('open');}
 let currentRole='parent';
 function setRole(r){
   currentRole=r;

@@ -611,17 +611,59 @@
     </div>
     <!-- ═══ PLAY (MEMORY GAME) ═══ -->
     <div class="scr" id="s-play">
-      <div class="proghero" style="padding-bottom:20px;border-bottom:1px solid var(--br)">
+      <div class="proghero" style="padding-bottom:16px;border-bottom:1px solid var(--br)">
         <h2 style="font-family:var(--font);font-size:24px;font-weight:800;color:var(--tx);text-align:center;margin-bottom:8px">Brain Gym 🧠</h2>
-        <p style="text-align:center;font-size:13px;color:var(--tx3);margin-bottom:16px">Memory Match - Open Source MIT License</p>
-        <div style="display:flex;justify-content:center;gap:16px;margin-bottom:20px">
-          <div class="chip cor" style="font-size:14px;padding:6px 14px;border:1px solid rgba(244,105,42,.3)">Moves: <span id="memMoves" style="margin-left:6px;font-weight:800;color:var(--or)">0</span></div>
-          <div class="chip cgd" style="font-size:14px;padding:6px 14px;border:1px solid rgba(232,160,32,.3)">Pairs: <span id="memPairs" style="margin-left:6px;font-weight:800;color:var(--gd)">0/8</span></div>
-        </div>
-        <button class="btn bor" style="width:100%" onclick="initMemoryGame()">Restart Game</button>
+        <p style="text-align:center;font-size:13px;color:var(--tx3);margin-bottom:0">Select a game to exercise your mind!</p>
       </div>
-      <div style="padding:24px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px" id="memGrid">
-        <!-- Cards injected via JS -->
+
+      <div class="game-hub" id="gameHub" style="padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div class="game-card" onclick="openGame('memory')">
+          <div class="gc-icon" style="background:var(--pul);color:var(--pu)">🃏</div>
+          <div class="gc-info"><h4>Memory Match</h4><p>Find pairs of emojis to win</p></div>
+          <div class="gc-play">Play</div>
+        </div>
+        <div class="game-card" onclick="openGame('tictactoe')">
+          <div class="gc-icon" style="background:var(--rdl);color:var(--rd)">⭕</div>
+          <div class="gc-info"><h4>Tic-Tac-Toe</h4><p>Classic X's and O's vs AI</p></div>
+          <div class="gc-play">Play</div>
+        </div>
+        <div class="game-card" onclick="openGame('math')">
+          <div class="gc-icon" style="background:var(--gdl);color:var(--gd)">🧮</div>
+          <div class="gc-info"><h4>Quick Math</h4><p>Solve simple equations fast</p></div>
+          <div class="gc-play">Play</div>
+        </div>
+      </div>
+
+      <div id="game-memory" style="display:none">
+        <div style="padding:20px 20px 0;display:flex;align-items:center;gap:10px">
+          <button class="btn bgh" style="height:32px;padding:0 12px" onclick="closeGame()">&larr; Back</button>
+          <div style="flex:1"></div>
+          <div class="chip cor" style="font-size:12px">Moves: <span id="memMoves" style="margin-left:4px;font-weight:800">0</span></div>
+          <div class="chip cgd" style="font-size:12px">Pairs: <span id="memPairs" style="margin-left:4px;font-weight:800">0/8</span></div>
+        </div>
+        <div style="padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px" id="memGrid"></div>
+        <div style="padding:0 20px"><button class="btn bor" style="width:100%" onclick="initMemoryGame()">Restart Game</button></div>
+      </div>
+
+      <div id="game-tictactoe" style="display:none">
+        <div style="padding:20px 20px 0;display:flex;align-items:center;gap:10px">
+          <button class="btn bgh" style="height:32px;padding:0 12px" onclick="closeGame()">&larr; Back</button>
+          <div style="flex:1;text-align:right;font-size:14px;font-weight:700;color:var(--tx)" id="tttStatus">Your turn (X)</div>
+        </div>
+        <div style="padding:30px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px" id="tttGrid"></div>
+        <div style="padding:0 20px"><button class="btn bor" style="width:100%" onclick="initTTT()">Restart Game</button></div>
+      </div>
+
+      <div id="game-math" style="display:none">
+        <div style="padding:20px 20px 0;display:flex;align-items:center;gap:10px">
+          <button class="btn bgh" style="height:32px;padding:0 12px" onclick="closeGame()">&larr; Back</button>
+          <div style="flex:1"></div>
+          <div class="chip cgd" style="font-size:12px">Score: <span id="mathScore" style="margin-left:4px;font-weight:800">0</span></div>
+        </div>
+        <div style="padding:40px 20px;text-align:center">
+          <div id="mathQ" style="font-size:48px;font-weight:800;font-family:var(--font);color:var(--tx);margin-bottom:30px">5 + 7 = ?</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" id="mathOpts"></div>
+        </div>
       </div>
       <div style="height:20px"></div>
     </div>

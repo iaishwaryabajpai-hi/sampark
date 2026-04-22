@@ -244,3 +244,172 @@ function filterComm(pill, cat){
   pill.classList.add('active');
   toast('🔍','Filtered', cat==='all'?'Showing all school activities':'Showing '+cat+' activities');
 }
+
+/* GAME HUB LOGIC */
+function openGame(id) {
+  document.getElementById('gameHub').style.display = 'none';
+  document.getElementById('game-memory').style.display = 'none';
+  document.getElementById('game-tictactoe').style.display = 'none';
+  document.getElementById('game-math').style.display = 'none';
+  document.getElementById('game-'+id).style.display = 'block';
+  if(id==='memory') initMemoryGame();
+  if(id==='tictactoe') initTTT();
+  if(id==='math') initMath();
+}
+
+function closeGame() {
+  document.getElementById('game-memory').style.display = 'none';
+  document.getElementById('game-tictactoe').style.display = 'none';
+  document.getElementById('game-math').style.display = 'none';
+  document.getElementById('gameHub').style.display = 'flex';
+}
+
+/* Tic Tac Toe Logic */
+let tttBoard = ['', '', '', '', '', '', '', '', ''];
+let tttActive = false;
+
+function initTTT() {
+  tttBoard = ['', '', '', '', '', '', '', '', ''];
+  tttActive = true;
+  document.getElementById('tttStatus').innerText = 'Your turn (X)';
+  const grid = document.getElementById('tttGrid');
+  grid.innerHTML = '';
+  for(let i=0; i<9; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'ttt-cell';
+    cell.onclick = () => playTTT(i, cell);
+    grid.appendChild(cell);
+  }
+}
+
+function playTTT(idx, cell) {
+  if(!tttActive || tttBoard[idx] !== '') return;
+  tttBoard[idx] = 'X';
+  cell.innerText = 'X';
+  cell.classList.add('x');
+  
+  if(checkTTTWin('X')) {
+    endTTT('You Won! 🎉', true);
+    return;
+  }
+  if(!tttBoard.includes('')) {
+    endTTT('Draw! 🤝', false);
+    return;
+  }
+  
+  document.getElementById('tttStatus').innerText = 'AI thinking...';
+  tttActive = false;
+  
+  setTimeout(() => {
+    let empty = tttBoard.map((v, i) => v === '' ? i : null).filter(v => v !== null);
+    if(empty.length > 0) {
+      let move = empty[Math.floor(Math.random() * empty.length)];
+      tttBoard[move] = 'O';
+      let aiCell = document.getElementById('tttGrid').children[move];
+      aiCell.innerText = 'O';
+      aiCell.classList.add('o');
+      
+      if(checkTTTWin('O')) {
+        endTTT('AI Won! 🤖', false);
+      } else if(!tttBoard.includes('')) {
+        endTTT('Draw! 🤝', false);
+      } else {
+        tttActive = true;
+        document.getElementById('tttStatus').innerText = 'Your turn (X)';
+      }
+    }
+  }, 600);
+}
+
+function checkTTTWin(p) {
+  const lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  for(let l of lines) {
+    if(tttBoard[l[0]]===p && tttBoard[l[1]]===p && tttBoard[l[2]]===p) {
+      document.getElementById('tttGrid').children[l[0]].classList.add('ttt-win');
+      document.getElementById('tttGrid').children[l[1]].classList.add('ttt-win');
+      document.getElementById('tttGrid').children[l[2]].classList.add('ttt-win');
+      return true;
+    }
+  }
+  return false;
+}
+
+function endTTT(msg, win) {
+  tttActive = false;
+  document.getElementById('tttStatus').innerText = msg;
+  if(win) {
+    toast('🎉', 'Victory!', 'You beat the AI! +20 XP');
+    badge('⭕', 'Tic-Tac-Toe Champ', 'Won a game of Tic-Tac-Toe', '+20 XP');
+  }
+}
+
+/* Quick Math Logic */
+let mathScore = 0;
+let mathCorrectAns = 0;
+
+function initMath() {
+  mathScore = 0;
+  document.getElementById('mathScore').innerText = '0';
+  nextMathQ();
+}
+
+function nextMathQ() {
+  const ops = ['+', '-', '*'];
+  const op = ops[Math.floor(Math.random()*ops.length)];
+  let a, b;
+  if(op === '*') {
+    a = Math.floor(Math.random()*9)+2;
+    b = Math.floor(Math.random()*9)+2;
+    mathCorrectAns = a * b;
+  } else if(op === '+') {
+    a = Math.floor(Math.random()*50)+10;
+    b = Math.floor(Math.random()*50)+10;
+    mathCorrectAns = a + b;
+  } else {
+    a = Math.floor(Math.random()*50)+20;
+    b = Math.floor(Math.random()*a);
+    mathCorrectAns = a - b;
+  }
+  
+  document.getElementById('mathQ').innerText = `${a} ${op} ${b} = ?`;
+  
+  let opts = [mathCorrectAns];
+  while(opts.length < 4) {
+    let wrong = mathCorrectAns + (Math.floor(Math.random()*21)-10);
+    if(wrong !== mathCorrectAns && !opts.includes(wrong) && wrong >= 0) opts.push(wrong);
+  }
+  opts.sort(() => Math.random() - 0.5);
+  
+  const optsDiv = document.getElementById('mathOpts');
+  optsDiv.innerHTML = '';
+  opts.forEach(val => {
+    const btn = document.createElement('button');
+    btn.className = 'math-opt';
+    btn.innerText = val;
+    btn.onclick = () => answerMath(btn, val === mathCorrectAns);
+    optsDiv.appendChild(btn);
+  });
+}
+
+function answerMath(btn, isCorrect) {
+  document.querySelectorAll('.math-opt').forEach(b => b.onclick = null);
+  if(isCorrect) {
+    btn.classList.add('correct');
+    mathScore += 10;
+    document.getElementById('mathScore').innerText = mathScore;
+    setTimeout(nextMathQ, 600);
+    if(mathScore === 50) {
+      toast('🏆', 'Math Whiz!', 'Scored 50 points! +50 XP');
+      badge('🧮', 'Quick Calculator', 'Scored 50 points in Quick Math', '+50 XP');
+    }
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.math-opt').forEach(b => {
+      if(parseInt(b.innerText) === mathCorrectAns) b.classList.add('correct');
+    });
+    setTimeout(() => {
+      toast('💡', 'Game Over', `Final Score: ${mathScore}`);
+      initMath();
+    }, 1500);
+  }
+}

@@ -107,7 +107,7 @@ box-shadow:0 0 0 8px #1a1a1a,0 0 0 9px #111,0 12px 48px rgba(0,0,0,.7),0 48px 96
 .stadd:active{transform:scale(.93)}
 .stadd svg{width:18px;height:18px;stroke:var(--tx3);fill:none;stroke-width:1.8}
 
-.evbanner{margin:10px 20px;background:linear-gradient(135deg,rgba(13,26,46,.9),rgba(24,40,72,.8));border:1px solid rgba(139,127,240,.2);border-radius:var(--r16);padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s}
+.evbanner{margin:10px 20px;background:linear-gradient(135deg,rgba(13,26,46,.9),rgba(24,40,72,.8));border:1px solid rgba(139,127,240,.2);border-radius:var(--r16);padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s;flex-shrink:0}
 .evbanner:active{transform:scale(.98)}
 .evbanner::before{content:'';position:absolute;top:-20px;right:-20px;width:70px;height:70px;border-radius:50%;background:rgba(139,127,240,.08)}
 .evdt{background:rgba(139,127,240,.15);border:1px solid rgba(139,127,240,.2);border-radius:var(--r12);padding:6px 10px;text-align:center;flex-shrink:0}
@@ -117,7 +117,7 @@ box-shadow:0 0 0 8px #1a1a1a,0 0 0 9px #111,0 12px 48px rgba(0,0,0,.7),0 48px 96
 .evinf p{font-size:11px;color:rgba(255,255,255,.5)}
 .evp{position:absolute;right:12px;top:12px}
 
-.post{background:var(--s1);border-bottom:1px solid var(--br);padding:16px 20px}
+.post{background:var(--s1);border-bottom:1px solid var(--br);padding:16px 20px;flex-shrink:0}
 .post.unread{border-left:2px solid var(--or)}
 .phdr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .pmeta{flex:1}

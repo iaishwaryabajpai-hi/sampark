@@ -15,14 +15,59 @@ function setRole(r){
   const map={parent:'ap',teacher:'at',student:'as'};
   document.getElementById('rp-'+r).classList.add(map[r]);
   const isT=r==='teacher',isS=r==='student';
-  document.getElementById('tc').style.display=isT?'block':'none';
-  document.getElementById('tbc').style.display=isT?'block':'none';
-  document.getElementById('ta').style.display=isT?'block':'none';
-  document.getElementById('tsl').style.display=isT?'block':'none';
-  document.getElementById('tprof').style.display=isT?'block':'none';
-  document.getElementById('sched').style.display=isT?'none':'block';
+
+  // Parent/Student content IDs to hide when teacher
+  const parentEls=['tc','tbc','ta','tsl','tprof'];
+  parentEls.forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
+
+  // Parent-only elements in feed (stories, event banner, posts)
+  document.querySelectorAll('.stbar,.evbanner,.post').forEach(el=>{
+    el.style.display=isT?'none':'';
+  });
+
+  // Parent-only elements in progress (student hero, streak, chart, badges, leaderboard)
+  document.querySelectorAll('.proghero,.strkcard,.chartcard,.badgegrid,.lbcard').forEach(el=>{
+    // Only target ones inside s-prog
+    if(el.closest('#s-prog'))el.style.display=isT?'none':'';
+  });
+  document.querySelectorAll('#s-prog > .sechdr').forEach(el=>el.style.display=isT?'none':'');
+
+  // Parent-only elements in messages (meetcta, vnui, parent DMs, scheduler)
+  document.querySelectorAll('.meetcta,.vnui').forEach(el=>{
+    if(el.closest('#s-msgs'))el.style.display=isT?'none':'';
+  });
+  // Parent DM rows (not inside teacher section)
+  document.querySelectorAll('#s-msgs > .dmrow').forEach(el=>el.style.display=isT?'none':'');
+  document.querySelectorAll('#s-msgs > .slbl').forEach(el=>el.style.display=isT?'none':'');
+  const sched=document.getElementById('sched');
+  if(sched)sched.style.display=isT?'none':'block';
+
+  // Parent-only profile elements
+  document.querySelectorAll('#s-prof > .profhero, #s-prof > .profscore').forEach(el=>el.style.display=isT?'none':'');
+  document.querySelectorAll('#s-prof > .slbl, #s-prof > .prefsec').forEach(el=>el.style.display=isT?'none':'');
+
+  // Teacher sections
+  document.querySelectorAll('.t-section').forEach(el=>el.style.display=isT?'block':'none');
+
+  // Build teacher chart if switching to teacher
+  if(isT) buildClassChart();
+
   const roleLabels={parent:'Parent View',teacher:'Teacher View',student:'Student View'};
   toast(isT?'👩‍🏫':isS?'🎒':'👨‍👩‍👦',roleLabels[r],isT?'Dashboard & analytics unlocked':isS?'Your XP and leaderboard':'Feed and messages active');
+}
+function buildClassChart(){
+  const mc=document.getElementById('t-mchart');
+  if(!mc)return;
+  mc.innerHTML='';
+  const scores=[68,72,70,76,79,80,82],days=['T1','T2','T3','T4','T5','T6','T7'];
+  scores.forEach((s,i)=>{
+    const wrap=document.createElement('div');wrap.className='barwrap';
+    const bar=document.createElement('div');bar.className='barfill'+(s>=80?' hi':s<=70?' low':'');
+    bar.style.height='0px';bar.style.maxHeight='52px';
+    const lbl=document.createElement('div');lbl.className='barlbl';lbl.textContent=days[i];
+    wrap.appendChild(bar);wrap.appendChild(lbl);mc.appendChild(wrap);
+    setTimeout(()=>{bar.style.height=Math.round(s/100*52)+'px';},100+i*80);
+  });
 }
 let toastTimer;
 function toast(icon,title,msg){
@@ -56,12 +101,21 @@ function confetti(){
   setTimeout(()=>c.innerHTML='',3000);
 }
 let storyTimer;
-function openStory(initials,name,time,emoji,heading,caption){
+function openStory(initials,name,time,emoji,heading,caption,img){
   const sv=document.getElementById('storyViewer');
   document.getElementById('stav').textContent=initials;
   document.getElementById('stauth').textContent=name;
   document.getElementById('sttm').textContent=time;
-  document.getElementById('stcont').textContent=emoji;
+  const cont=document.getElementById('stcont');
+  if(img){
+    cont.textContent='';
+    cont.style.backgroundImage='url('+img+')';
+    cont.style.backgroundSize='cover';
+    cont.style.backgroundPosition='center';
+  }else{
+    cont.textContent=emoji;
+    cont.style.backgroundImage='none';
+  }
   document.getElementById('stcaph').textContent=heading;
   document.getElementById('stcapp').textContent=caption;
   const pb=document.getElementById('stprogbar');

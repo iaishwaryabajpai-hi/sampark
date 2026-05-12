@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<!-- DEVICE -->
+<div class="device">
 <!-- TOAST -->
 <div class="toast" id="toast">
   <div class="toasticon" id="ti">🏆</div>
@@ -76,8 +78,6 @@
   <div class="notifitem" onclick="closeNotif()"><div class="notiftico" style="background:var(--gdl)">🔥</div><div class="notifbdy"><h5>7-Day Streak!</h5><p>You've been active 7 days in a row +50 XP</p><time>2 days ago</time></div></div>
 </div>
 
-<!-- DEVICE -->
-<div class="device">
   <div class="status">
     <span class="st">9:41</span>
     <div style="display:flex;gap:6px;align-items:center">
@@ -108,10 +108,10 @@
     <div class="scr active" id="s-feed">
       <div class="stbar">
         <div class="stit"><div class="stadd" onclick="toast('📷','Add Story','Camera opening...')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><span class="stnm">Your story</span></div>
-        <div class="stit" onclick="openStory('SV','Ms. Vijaya','2h ago','📸','Class 5B Math Results 🎉','Class average 82/100 — our best this semester!')"><div class="string live"><div class="stinner"><div class="av av32 avt">SV</div></div></div><span class="stnm">Ms. Vijaya</span></div>
-        <div class="stit" onclick="openStory('PS','Principal','5h ago','🏫','Important Notice 📢','School closes 1 PM Friday for Sports Day prep!')"><div class="string live"><div class="stinner"><div class="av av32 ava">PS</div></div></div><span class="stnm">Principal</span></div>
-        <div class="stit" onclick="openStory('RG','Ms. Ritu','1d ago','📚','Home Reading Tip 📖','5 mins read-aloud nightly boosts fluency by 40%')"><div class="string seen"><div class="stinner"><div class="av av32 avs">RG</div></div></div><span class="stnm">Ms. Ritu</span></div>
-        <div class="stit" onclick="openStory('MK','Mr. Kumar','2d ago','🔬','Science Project 🧪','Submissions due this Friday — great work class!')"><div class="string seen"><div class="stinner"><div class="av av32 avt" style="background:linear-gradient(135deg,var(--gd),#D4860E)">MK</div></div></div><span class="stnm">Mr. Kumar</span></div>
+        <div class="stit" onclick="openStory('SV','Ms. Vijaya','2h ago','📸','Class 5B Math Results 🎉','Class average 82/100 — our best this semester!','img_math.png')"><div class="string live"><div class="stinner"><div class="av av32 avt">SV</div></div></div><span class="stnm">Ms. Vijaya</span></div>
+        <div class="stit" onclick="openStory('PS','Principal','5h ago','🏫','Annual Sports Day 🏆','Sports Day prep in full swing — parents welcome!','img_sports.png')"><div class="string live"><div class="stinner"><div class="av av32 ava">PS</div></div></div><span class="stnm">Principal</span></div>
+        <div class="stit" onclick="openStory('RG','Ms. Ritu','1d ago','📚','Book Fair Coming! 📖','500+ books at Scholastic Book Fair — May 18-20!','img_bookfair.png')"><div class="string seen"><div class="stinner"><div class="av av32 avs">RG</div></div></div><span class="stnm">Ms. Ritu</span></div>
+        <div class="stit" onclick="openStory('MK','Mr. Kumar','2d ago','🔬','Science Project 🧪','Students building amazing solar system models!','img_science.png')"><div class="string seen"><div class="stinner"><div class="av av32 avt" style="background:linear-gradient(135deg,var(--gd),#D4860E)">MK</div></div></div><span class="stnm">Mr. Kumar</span></div>
       </div>
       <div class="evbanner" onclick="switchTab('msgs')">
         <div class="evdt"><div class="evm">Mar</div><div class="evd">22</div></div>
@@ -142,6 +142,7 @@
           <span>Translate to Hindi · हिंदी में पढ़ें</span>
         </div>
         <div class="pbody">🎉 <strong>Excellent work in today's math test!</strong> Class 5B average was <strong>82/100</strong> — our best result this semester. Special mention for Arjun Kumar, Priya Rathore, and Meena Patel who scored 95+!</div>
+        <img class="pimg" src="img_math.png" alt="Math class">
         <div class="xpembed">
           <div class="xpei">🏆</div>
           <div class="xpet"><h5>Class Achievement Unlocked!</h5><p>Math Masters — Class 5B earned +300 XP</p></div>
@@ -184,6 +185,217 @@
           <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
         </div>
       </div>
+      <!-- NEW POSTS -->
+      <div class="post unread">
+        <div class="phdr">
+          <div class="av av40 avt" style="background:linear-gradient(135deg,var(--gd),#D4860E)">MK</div>
+          <div class="pmeta"><div class="pname">Mr. Kumar · Science</div><div class="psub">Class 5B · 3h ago</div></div>
+          <span class="chip cor">Reminder</span>
+        </div>
+        <div class="pbody">🔬 <strong>Science Project Reminder!</strong> All students must submit their working models by <strong>Friday, May 16</strong>. Topics: Solar System, Water Cycle, or Simple Machines. Parents, please help them with materials — chart paper, thermocol, and glue. 🧪</div>
+        <img class="pimg" src="img_science.png" alt="Science project">
+        <div class="tipcard"><h5><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Materials Needed</h5><p>Chart paper · Thermocol · Fevicol · Sketch pens · Any recycled items ✓</p></div>
+        <div class="pacts">
+          <div class="abtn" id="lk4" onclick="like('lk4',15)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>15</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>5</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="phdr">
+          <div class="av av40" style="background:linear-gradient(135deg,#2D7FF9,#5B9DFF)">PT</div>
+          <div class="pmeta"><div class="pname">PE Teacher · Sports Dept</div><div class="psub">Physical Education · 6h ago</div></div>
+          <span class="chip cmn">Sports</span>
+        </div>
+        <div class="pbody">🏃 <strong>Annual Sports Day — March 21!</strong> Events include: 100m race, relay, long jump, tug of war, and lemon-spoon race. Students must wear white PT uniform and white shoes. Reporting time: <strong>7:30 AM sharp</strong>. Parents are welcome to attend! 🏆</div>
+        <img class="pimg" src="img_sports.png" alt="Sports day">
+        <div class="pacts">
+          <div class="abtn" id="lk5" onclick="like('lk5',32)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>32</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>9</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="phdr">
+          <div class="av av40 ava">PS</div>
+          <div class="pmeta"><div class="pname">PTA Committee</div><div class="psub">Parent-Teacher Association · 1d ago</div></div>
+          <span class="chip cpu">Meeting</span>
+        </div>
+        <div class="pbody">📋 <strong>PTA Meeting — Saturday, March 22</strong> at 10 AM (Online via Google Meet). Agenda: Summer camp planning, fee structure review, canteen quality feedback, and new library books selection. All parents are requested to attend. Link will be shared on WhatsApp. 🙏</div>
+        <div class="pacts">
+          <div class="abtn" id="lk6" onclick="like('lk6',28)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>28</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>6</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="phdr">
+          <div class="av av40" style="background:linear-gradient(135deg,#FF6B35,#FF9F1C)">CN</div>
+          <div class="pmeta"><div class="pname">Canteen Manager</div><div class="psub">School Canteen · 2d ago</div></div>
+          <span class="chip cgd">Menu</span>
+        </div>
+        <div class="pbody">🍱 <strong>New Canteen Menu!</strong> Starting next week, we're adding healthier options: Brown bread sandwich ₹20, Fruit salad ₹15, Sprouts chaat ₹10, Dal-rice combo ₹25. Also: <strong>No outside food allowed</strong> from April 1 as per school hygiene policy. 🥗</div>
+        <img class="pimg" src="img_canteen.png" alt="Canteen food">
+        <div class="pacts">
+          <div class="abtn" id="lk7" onclick="like('lk7',19)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>19</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>14</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post" style="margin-bottom:8px">
+        <div class="phdr">
+          <div class="av av40 avs">RG</div>
+          <div class="pmeta"><div class="pname">Ms. Ritu Gupta · Hindi</div><div class="psub">Hindi Teacher · 3d ago</div></div>
+          <span class="chip cor">Homework</span>
+        </div>
+        <div class="pbody">📖 <strong>Hindi Sulekh (Handwriting) Practice:</strong> Please ensure your child writes <strong>one page of Hindi cursive</strong> daily. Good handwriting earns bonus XP! Also, the Hindi poem recitation competition is on <strong>March 25</strong> — topic: "Mera Bharat Mahan". 🇮🇳</div>
+        <div class="xpembed">
+          <div class="xpei">📝</div>
+          <div class="xpet"><h5>Daily Writing Challenge</h5><p>Complete 1 page Hindi sulekh for +20 XP daily</p></div>
+          <button class="btn bgh" style="height:30px;padding:0 10px;font-size:11px;flex-shrink:0" onclick="toast('✅','Logged!','Today\'s writing practice marked complete · +20 XP')">Done ✓</button>
+        </div>
+        <div class="pacts">
+          <div class="abtn" id="lk8" onclick="like('lk8',22)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>22</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>4</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post unread">
+        <div class="phdr">
+          <div class="av av40" style="background:linear-gradient(135deg,#AF52DE,#DA70D6)">LB</div>
+          <div class="pmeta"><div class="pname">School Library</div><div class="psub">Librarian · Ms. Meera · 4h ago</div></div>
+          <span class="chip cpu">New</span>
+        </div>
+        <div class="pbody">📚 <strong>Annual Book Fair — May 18-20!</strong> Over 500 books from Scholastic, National Book Trust, and CBT. Special discounts for students: 20% off on all fiction, 30% off on reference books. Each student gets a ₹100 book voucher from school. Don't miss it! 📖✨</div>
+        <img class="pimg" src="img_bookfair.png" alt="Book fair">
+        <div class="pacts">
+          <div class="abtn" id="lk9" onclick="like('lk9',35)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>35</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>7</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="phdr">
+          <div class="av av40" style="background:linear-gradient(135deg,#FF3B30,#FF6961)">TR</div>
+          <div class="pmeta"><div class="pname">Transport Dept</div><div class="psub">School Administration · 5h ago</div></div>
+          <span class="chip crd">Important</span>
+        </div>
+        <div class="pbody">🚌 <strong>Bus Route 5 — Timing Change!</strong> Due to road construction near Sector 12, Route 5 will now depart <strong>10 minutes earlier (7:00 AM)</strong> from tomorrow. Drop timing remains same. This is effective until June 15. Parents on Route 5, please note. Contact transport desk for queries: 📞 98765-00005</div>
+        <div class="pacts">
+          <div class="abtn" id="lk10" onclick="like('lk10',16)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>16</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>11</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="phdr">
+          <div class="av av40 ava">PS</div>
+          <div class="pmeta"><div class="pname">Exam Controller</div><div class="psub">Examination Dept · 1d ago</div></div>
+          <span class="chip cor">Exam</span>
+        </div>
+        <div class="pbody">📝 <strong>Unit Test 3 — Exam Timetable Released!</strong><br>📐 May 19 (Mon) — Mathematics<br>🔬 May 20 (Tue) — Science<br>📖 May 21 (Wed) — Hindi<br>📝 May 22 (Thu) — English<br>🌍 May 23 (Fri) — Social Studies<br><br>Timing: <strong>9:00 AM – 11:00 AM</strong>. Students must bring their own stationery. No calculators allowed.</div>
+        <img class="pimg" src="img_exam.png" alt="Exam hall">
+        <div class="pacts">
+          <div class="abtn" id="lk11" onclick="like('lk11',38)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>38</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>18</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="phdr">
+          <div class="av av40" style="background:linear-gradient(135deg,#00C896,#34C759)">EC</div>
+          <div class="pmeta"><div class="pname">Eco Club · Green Warriors</div><div class="psub">Student Club · 2d ago</div></div>
+          <span class="chip cmn">Activity</span>
+        </div>
+        <div class="pbody">🌱 <strong>Tree Plantation Drive — May 15!</strong> Every student plants one sapling in the school garden. Saplings provided: Neem, Mango, Peepal, Tulsi. Wear your house t-shirts! Parents who want to donate saplings can contact the Eco Club coordinator. Let's make our school greener! 🌳💚</div>
+        <img class="pimg" src="img_trees.png" alt="Tree plantation">
+        <div class="xpembed">
+          <div class="xpei">🌱</div>
+          <div class="xpet"><h5>Green Warrior Badge</h5><p>Plant a tree and earn +30 XP!</p></div>
+          <button class="btn bgh" style="height:30px;padding:0 10px;font-size:11px;flex-shrink:0" onclick="toast('🌱','Registered!','You\'re signed up for Tree Plantation Drive · +30 XP')">Join</button>
+        </div>
+        <div class="pacts">
+          <div class="abtn" id="lk12" onclick="like('lk12',45)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>45</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>10</span></div>
+          <div class="abtn" id="cp2" onclick="clap('cp2',20)"><svg viewBox="0 0 24 24"><path d="M14.5 2.5c0-1.1-.9-2-2-2s-2 .9-2 2v7.5L9 12l-1.5-5.5c-.28-1.1-1.4-1.7-2.5-1.4s-1.7 1.4-1.4 2.5L6 17l-1.7-1.7a1.5 1.5 0 0 0-2.1 2.1L6 21.2A7.5 7.5 0 0 0 13.5 24h1a7.5 7.5 0 0 0 7.5-7.5V9a2 2 0 0 0-4 0v-1a2 2 0 0 0-4 0v-.5z"/></svg><span>20</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <div class="post" style="margin-bottom:8px">
+        <div class="phdr">
+          <div class="av av40 avp">SK</div>
+          <div class="pmeta"><div class="pname">Suneeta Kumari (Parent)</div><div class="psub">PTA Member · 3d ago</div></div>
+          <span class="chip cgd">Appreciation</span>
+        </div>
+        <div class="pbody">🙏 <strong>Thank you Ms. Vijaya!</strong> Arjun has improved so much in math this semester — from 65% to 95%! The extra worksheets and daily practice tips really worked. Also grateful to Mr. Kumar for making science fun with hands-on experiments. Our kids are lucky to have such dedicated teachers. 🌟❤️</div>
+        <div class="pacts">
+          <div class="abtn" id="lk13" onclick="like('lk13',52)"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>52</span></div>
+          <div class="abtn" onclick="switchTab('comm')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>8</span></div>
+          <div class="abtn" id="cp3" onclick="clap('cp3',34)"><svg viewBox="0 0 24 24"><path d="M14.5 2.5c0-1.1-.9-2-2-2s-2 .9-2 2v7.5L9 12l-1.5-5.5c-.28-1.1-1.4-1.7-2.5-1.4s-1.7 1.4-1.4 2.5L6 17l-1.7-1.7a1.5 1.5 0 0 0-2.1 2.1L6 21.2A7.5 7.5 0 0 0 13.5 24h1a7.5 7.5 0 0 0 7.5-7.5V9a2 2 0 0 0-4 0v-1a2 2 0 0 0-4 0v-.5z"/></svg><span>34</span></div>
+          <div class="abtn" onclick="toast('📤','Shared!','Sent to WhatsApp')"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span>Share</span></div>
+        </div>
+      </div>
+      <!-- TEACHER FEED -->
+      <div id="t-feed" class="t-section" style="display:none">
+        <!-- Teacher Greeting -->
+        <div class="t-greeting">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div class="av av52 avt">SV</div>
+            <div style="flex:1"><div style="font-family:var(--font);font-size:16px;font-weight:800;color:var(--tx)">Good Morning, Ms. Vijaya 👋</div><div style="font-size:12px;color:var(--tx3);margin-top:2px">Tuesday · Class 5B · 42 Students</div></div>
+          </div>
+          <div class="t-quickstats">
+            <div class="t-qs"><div class="t-qsv" style="color:var(--mn)">38</div><div class="t-qsl">Present</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--rd)">4</div><div class="t-qsl">Absent</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--or)">3</div><div class="t-qsl">Late</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--pu)">5</div><div class="t-qsl">Pending</div></div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="slbl">Quick Actions</div>
+        <div class="t-actions">
+          <div class="t-act" onclick="toast('📢','Post Update','Opening composer for 42 parents...')"><div class="t-act-ico" style="background:var(--orl)">📢</div><div class="t-act-lbl">Post Update</div></div>
+          <div class="t-act" onclick="toast('📋','Attendance','Marking attendance for Class 5B...')"><div class="t-act-ico" style="background:var(--mnl)">📋</div><div class="t-act-lbl">Attendance</div></div>
+          <div class="t-act" onclick="toast('📝','Homework','Assigning homework to Class 5B...')"><div class="t-act-ico" style="background:var(--pul)">📝</div><div class="t-act-lbl">Homework</div></div>
+          <div class="t-act" onclick="toast('📊','Grades','Opening gradebook for Class 5B...')"><div class="t-act-ico" style="background:var(--gdl)">📊</div><div class="t-act-lbl">Grades</div></div>
+          <div class="t-act" onclick="toast('📸','Gallery','Upload class photos...')"><div class="t-act-ico" style="background:var(--bll)">📸</div><div class="t-act-lbl">Photos</div></div>
+          <div class="t-act" onclick="toast('🎤','Voice','Record a voice update for parents...')"><div class="t-act-ico" style="background:var(--rdl)">🎤</div><div class="t-act-lbl">Voice Note</div></div>
+        </div>
+
+        <!-- Today's Schedule -->
+        <div class="slbl">Today's Schedule</div>
+        <div class="t-sched-list">
+          <div class="t-sched-row t-sched-now"><div class="t-sched-time">8:00</div><div class="t-sched-dot" style="background:var(--or)"></div><div class="t-sched-info"><div class="t-sched-subj">Mathematics · Class 5B</div><div class="t-sched-room">Room 204 · Ch 12: Fractions</div></div><span class="chip cor" style="font-size:9px">Now</span></div>
+          <div class="t-sched-row"><div class="t-sched-time">9:00</div><div class="t-sched-dot" style="background:var(--pu)"></div><div class="t-sched-info"><div class="t-sched-subj">Mathematics · Class 5A</div><div class="t-sched-room">Room 201 · Ch 11: Geometry</div></div></div>
+          <div class="t-sched-row"><div class="t-sched-time">10:00</div><div class="t-sched-dot" style="background:var(--mn)"></div><div class="t-sched-info"><div class="t-sched-subj">Free Period</div><div class="t-sched-room">Staff Room · Grade papers</div></div></div>
+          <div class="t-sched-row"><div class="t-sched-time">11:00</div><div class="t-sched-dot" style="background:var(--gd)"></div><div class="t-sched-info"><div class="t-sched-subj">Mathematics · Class 4A</div><div class="t-sched-room">Room 108 · Ch 10: Multiplication</div></div></div>
+          <div class="t-sched-row"><div class="t-sched-time">12:00</div><div class="t-sched-dot" style="background:var(--bl)"></div><div class="t-sched-info"><div class="t-sched-subj">Lunch Break</div><div class="t-sched-room">Staff Canteen</div></div></div>
+          <div class="t-sched-row"><div class="t-sched-time">1:00</div><div class="t-sched-dot" style="background:var(--rd)"></div><div class="t-sched-info"><div class="t-sched-subj">Mathematics · Class 6B</div><div class="t-sched-room">Room 301 · Ch 8: Algebra</div></div></div>
+          <div class="t-sched-row"><div class="t-sched-time">2:00</div><div class="t-sched-dot" style="background:var(--pu)"></div><div class="t-sched-info"><div class="t-sched-subj">PTM Meeting · Suneeta K.</div><div class="t-sched-room">Video Call · Google Meet</div></div><span class="chip cpu" style="font-size:9px">PTM</span></div>
+        </div>
+
+        <!-- Pending Tasks -->
+        <div class="slbl">Pending Tasks</div>
+        <div class="t-tasks">
+          <div class="t-task" onclick="toast('📋','Homework','Opening submissions for Class 5B...')"><div class="t-task-ico" style="background:var(--rdl);color:var(--rd)">!</div><div class="t-task-info"><div class="t-task-title">Review 5B Math Homework</div><div class="t-task-sub">28/42 submitted · Due today</div></div><span class="chip crd" style="font-size:9px">Urgent</span></div>
+          <div class="t-task" onclick="toast('💬','Reply','Opening message from Rajesh P...')"><div class="t-task-ico" style="background:var(--orl);color:var(--or)">💬</div><div class="t-task-info"><div class="t-task-title">Reply to Rajesh P.</div><div class="t-task-sub">Asked about Priya's science marks</div></div><span class="chip cor" style="font-size:9px">1h ago</span></div>
+          <div class="t-task" onclick="toast('📊','Grades','Opening Unit Test 2 results...')"><div class="t-task-ico" style="background:var(--pul);color:var(--pu)">📊</div><div class="t-task-info"><div class="t-task-title">Upload Unit Test 2 Results</div><div class="t-task-sub">Class 5A · 38 answer sheets</div></div><span class="chip cpu" style="font-size:9px">By Friday</span></div>
+          <div class="t-task" onclick="toast('📢','Notice','Drafting notice for parents...')"><div class="t-task-ico" style="background:var(--mnl);color:var(--mn)">📢</div><div class="t-task-info"><div class="t-task-title">Send Sports Day Notice</div><div class="t-task-sub">Notify 120+ parents about early pickup</div></div><span class="chip cmn" style="font-size:9px">Tomorrow</span></div>
+          <div class="t-task" onclick="toast('🏆','Badges','Awarding badges to top performers...')"><div class="t-task-ico" style="background:var(--gdl);color:var(--gd)">🏆</div><div class="t-task-info"><div class="t-task-title">Award Math Master Badges</div><div class="t-task-sub">3 students qualified · Arjun, Priya, Meena</div></div><span class="chip cgd" style="font-size:9px">New</span></div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="slbl">Your Recent Activity</div>
+        <div class="t-activity">
+          <div class="t-actrow"><div class="t-actdot" style="background:var(--or)"></div><div class="t-actinfo"><span>You shared <strong>Class 5B math results</strong></span><div class="t-actmeta">42 parents notified · 38 read · 2h ago</div></div></div>
+          <div class="t-actrow"><div class="t-actdot" style="background:var(--mn)"></div><div class="t-actinfo"><span>Attendance marked for <strong>Class 5B</strong></span><div class="t-actmeta">38 present, 4 absent · 8:15 AM</div></div></div>
+          <div class="t-actrow"><div class="t-actdot" style="background:var(--pu)"></div><div class="t-actinfo"><span>Awarded <strong>Math Master</strong> badge to Arjun</span><div class="t-actmeta">+150 XP to student · Yesterday</div></div></div>
+          <div class="t-actrow"><div class="t-actdot" style="background:var(--gd)"></div><div class="t-actinfo"><span>Uploaded <strong>Unit Test 1 grades</strong> for 5A</span><div class="t-actmeta">38 students graded · Yesterday</div></div></div>
+          <div class="t-actrow"><div class="t-actdot" style="background:var(--bl)"></div><div class="t-actinfo"><span>Replied to <strong>Suneeta K.</strong> about Arjun</span><div class="t-actmeta">PTM scheduled for Thursday · 2 days ago</div></div></div>
+          <div class="t-actrow"><div class="t-actdot" style="background:var(--rd)"></div><div class="t-actinfo"><span>Sent <strong>Science project reminder</strong> to parents</span><div class="t-actmeta">120 parents notified · 3 days ago</div></div></div>
+        </div>
+        <div style="height:20px"></div>
+      </div>
     </div>
     <!-- ═══ EXPLORE ═══ -->
     <div class="scr" id="s-comm">
@@ -200,7 +412,15 @@
         <div class="exp-btn" onclick="openPanel('compete')"><div class="exp-ico" style="background:var(--bll)">🏆</div><div class="exp-lbl">Compete</div></div>
         <div class="exp-btn" onclick="openPanel('channels')"><div class="exp-ico" style="background:rgba(255,255,255,.06)">💬</div><div class="exp-lbl">Channels</div></div>
         <div class="exp-btn" onclick="openPanel('polls')"><div class="exp-ico" style="background:var(--orl)">📊</div><div class="exp-lbl">Polls</div></div>
-        <div class="exp-btn" onclick="toast('🔔','Coming Soon','Gallery launching next week!')"><div class="exp-ico" style="background:var(--pul)">📸</div><div class="exp-lbl">Gallery</div></div>
+        <div class="exp-btn" onclick="openPanel('gallery')"><div class="exp-ico" style="background:var(--pul)">📸</div><div class="exp-lbl">Gallery</div></div>
+        <div class="exp-btn" onclick="openPanel('fees')"><div class="exp-ico" style="background:rgba(232,160,32,.12)">💰</div><div class="exp-lbl">Fees</div></div>
+        <div class="exp-btn" onclick="openPanel('report')"><div class="exp-ico" style="background:rgba(90,200,250,.12)">📝</div><div class="exp-lbl">Report Card</div></div>
+        <div class="exp-btn" onclick="openPanel('bus')"><div class="exp-ico" style="background:rgba(255,59,48,.12)">🚌</div><div class="exp-lbl">Bus Track</div></div>
+        <div class="exp-btn" onclick="openPanel('library')"><div class="exp-ico" style="background:rgba(175,82,222,.12)">📚</div><div class="exp-lbl">Library</div></div>
+        <div class="exp-btn" onclick="openPanel('holidays')"><div class="exp-ico" style="background:rgba(52,199,89,.12)">🏖️</div><div class="exp-lbl">Holidays</div></div>
+        <div class="exp-btn" onclick="openPanel('attendance')"><div class="exp-ico" style="background:rgba(45,127,249,.12)">✅</div><div class="exp-lbl">Attendance</div></div>
+        <div class="exp-btn" onclick="openPanel('diary')"><div class="exp-ico" style="background:rgba(255,214,10,.12)">📖</div><div class="exp-lbl">Diary</div></div>
+        <div class="exp-btn" onclick="openPanel('complaint')"><div class="exp-ico" style="background:rgba(255,59,48,.12)">🎫</div><div class="exp-lbl">Complaints</div></div>
       </div>
       <!-- EVENTS -->
       <div class="sub-panel" id="panel-events">
@@ -299,6 +519,146 @@
           <div class="pollft"><span class="pollvt">89 parents voted · 5 days left</span><span class="chip cmn">Live</span></div>
         </div>
       </div>
+      <!-- GALLERY -->
+      <div class="sub-panel" id="panel-gallery">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('gallery')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Photo Gallery</h3></div>
+        <div class="slbl">Recent Events</div>
+        <div class="notice-item" onclick="toast('📸','Opening','Sports Day 2026 album')"><div class="notice-dot" style="background:var(--mnl)">🏅</div><div class="notice-tx"><h5>Annual Sports Day 2026</h5><p>48 photos · March 15</p><time>2 weeks ago</time></div></div>
+        <div class="notice-item" onclick="toast('📸','Opening','Republic Day album')"><div class="notice-dot" style="background:var(--orl)">🇮🇳</div><div class="notice-tx"><h5>Republic Day Celebration</h5><p>32 photos · Jan 26</p><time>3 months ago</time></div></div>
+        <div class="notice-item" onclick="toast('📸','Opening','Science Fair album')"><div class="notice-dot" style="background:var(--bll)">🔬</div><div class="notice-tx"><h5>Science Exhibition</h5><p>56 photos · Feb 10</p><time>2 months ago</time></div></div>
+        <div class="notice-item" onclick="toast('📸','Opening','Annual Day album')"><div class="notice-dot" style="background:var(--pul)">🎭</div><div class="notice-tx"><h5>Annual Day Performance</h5><p>72 photos · Dec 20</p><time>4 months ago</time></div></div>
+        <div class="notice-item" onclick="toast('📸','Opening','Class photos album')"><div class="notice-dot" style="background:var(--gdl)">📷</div><div class="notice-tx"><h5>Class Photos 2025-26</h5><p>15 photos · All classes</p><time>6 months ago</time></div></div>
+      </div>
+      <!-- FEES -->
+      <div class="sub-panel" id="panel-fees">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('fees')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Fee Management</h3></div>
+        <div style="padding:16px 20px">
+          <div style="background:linear-gradient(135deg,rgba(52,199,89,.12),rgba(52,199,89,.05));border:1px solid rgba(52,199,89,.25);border-radius:var(--r16);padding:16px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:var(--font);font-size:14px;font-weight:700;color:var(--tx)">Fee Status</span><span class="chip cmn">Paid ✓</span></div>
+            <div style="font-size:12px;color:var(--tx3)">Term 1 (Apr–Sep) · Paid on 15 Apr 2026</div>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(255,214,10,.12),rgba(255,214,10,.05));border:1px solid rgba(255,214,10,.25);border-radius:var(--r16);padding:16px;margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:var(--font);font-size:14px;font-weight:700;color:var(--tx)">Term 2 Fee</span><span class="chip cgd">Due Oct 1</span></div>
+            <div style="font-size:24px;font-weight:800;font-family:var(--font);color:var(--gd);margin:8px 0">₹4,500</div>
+            <div style="font-size:11px;color:var(--tx3);margin-bottom:10px">Tuition ₹3,200 + Activity ₹800 + Lab ₹500</div>
+            <button class="btn bor" style="width:100%;height:36px;font-size:12px" onclick="toast('💳','Payment','Opening UPI / payment gateway...')">Pay Now via UPI 💳</button>
+          </div>
+        </div>
+        <div class="slbl">Payment History</div>
+        <div class="notice-item" onclick="toast('🧾','Receipt','Downloading receipt...')"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Term 1 Fee — ₹4,500</h5><p>Paid via UPI · Txn: SAM20260415</p><time>15 Apr 2026</time></div></div>
+        <div class="notice-item" onclick="toast('🧾','Receipt','Downloading receipt...')"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Annual Charges — ₹2,000</h5><p>Paid via Bank Transfer</p><time>5 Apr 2026</time></div></div>
+        <div class="notice-item" onclick="toast('🧾','Receipt','Downloading receipt...')"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Exam Fee — ₹500</h5><p>Paid via Cash at Office</p><time>20 Mar 2026</time></div></div>
+      </div>
+      <!-- REPORT CARD -->
+      <div class="sub-panel" id="panel-report">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('report')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Report Card</h3></div>
+        <div style="padding:16px 20px">
+          <div style="background:var(--s1);border:1px solid var(--br);border-radius:var(--r16);padding:16px;margin-bottom:12px;text-align:center">
+            <div style="font-family:var(--font);font-size:16px;font-weight:800;color:var(--tx)">Arjun Kumar · Class 5B</div>
+            <div style="font-size:12px;color:var(--tx3);margin-top:2px">Unit Test 2 · March 2026</div>
+            <div style="font-size:36px;font-weight:800;font-family:var(--font);color:var(--or);margin:12px 0">82%</div>
+            <div style="font-size:11px;color:var(--tx3)">Class Rank: 2nd / 42 students</div>
+          </div>
+        </div>
+        <div class="syl-item"><div class="syl-ico" style="background:var(--orl)">📐</div><div class="syl-info"><h4>Mathematics</h4><p>Unit 2 · Scored 95/100</p></div><div class="syl-pct" style="color:var(--or)">95</div></div>
+        <div class="syl-item"><div class="syl-ico" style="background:var(--mnl)">🔬</div><div class="syl-info"><h4>Science</h4><p>Unit 2 · Scored 82/100</p></div><div class="syl-pct">82</div></div>
+        <div class="syl-item"><div class="syl-ico" style="background:var(--pul)">📝</div><div class="syl-info"><h4>English</h4><p>Unit 2 · Scored 78/100</p></div><div class="syl-pct">78</div></div>
+        <div class="syl-item"><div class="syl-ico" style="background:var(--gdl)">🕉</div><div class="syl-info"><h4>Hindi</h4><p>Unit 2 · Scored 74/100</p></div><div class="syl-pct" style="color:var(--gd)">74</div></div>
+        <div class="syl-item"><div class="syl-ico" style="background:var(--bll)">🌍</div><div class="syl-info"><h4>Social Studies</h4><p>Unit 2 · Scored 80/100</p></div><div class="syl-pct">80</div></div>
+        <div class="syl-item"><div class="syl-ico" style="background:var(--rdl)">💻</div><div class="syl-info"><h4>Computer Science</h4><p>Unit 2 · Scored 98/100</p></div><div class="syl-pct" style="color:var(--or)">98</div></div>
+        <div style="padding:12px 20px"><button class="btn bor" style="width:100%;font-size:12px" onclick="toast('📥','Download','Report card PDF downloading...')">Download PDF Report Card 📥</button></div>
+      </div>
+      <!-- BUS TRACKING -->
+      <div class="sub-panel" id="panel-bus">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('bus')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Bus Tracking</h3></div>
+        <div style="padding:16px 20px">
+          <div style="background:linear-gradient(135deg,rgba(45,127,249,.12),rgba(45,127,249,.05));border:1px solid rgba(45,127,249,.25);border-radius:var(--r16);padding:16px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:24px">🚌</span><div><div style="font-family:var(--font);font-size:15px;font-weight:800;color:var(--tx)">Bus Route 5</div><div style="font-size:11px;color:var(--mn)">● On Time · ETA 7:25 AM</div></div></div>
+            <div style="font-size:12px;color:var(--tx3)">Driver: Mr. Ramesh · Ph: +91 98765 11111</div>
+          </div>
+        </div>
+        <div class="slbl">Route Details</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🟢</div><div class="notice-tx"><h5>Stop 1 · Sector 12 Gate</h5><p>Pickup: 7:10 AM · Arjun's stop</p><time>0.5 km</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🟡</div><div class="notice-tx"><h5>Stop 2 · Market Chowk</h5><p>Pickup: 7:15 AM</p><time>1.2 km</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🟡</div><div class="notice-tx"><h5>Stop 3 · Housing Colony</h5><p>Pickup: 7:20 AM</p><time>2.0 km</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--bll)">🏫</div><div class="notice-tx"><h5>School · GPS No. 4</h5><p>Arrival: 7:30 AM</p><time>3.5 km</time></div></div>
+        <div class="slbl">Drop Schedule</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--pul)">🏫</div><div class="notice-tx"><h5>School Departure</h5><p>Drop bus leaves at 2:30 PM</p><time>Daily</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🏠</div><div class="notice-tx"><h5>Drop at Sector 12 Gate</h5><p>Expected: 2:50 PM</p><time>Arjun's stop</time></div></div>
+      </div>
+      <!-- LIBRARY -->
+      <div class="sub-panel" id="panel-library">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('library')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Library</h3></div>
+        <div class="slbl">Currently Issued</div>
+        <div class="notice-item" onclick="toast('📚','Book','Due in 5 days')"><div class="notice-dot" style="background:var(--orl)">📕</div><div class="notice-tx"><h5>The Story of My Life — Helen Keller</h5><p>Issued: May 5 · Due: May 19</p><time>5 days left</time></div></div>
+        <div class="notice-item" onclick="toast('📚','Book','Due in 12 days')"><div class="notice-dot" style="background:var(--pul)">📗</div><div class="notice-tx"><h5>Panchtantra Ki Kahaniya</h5><p>Issued: May 8 · Due: May 22</p><time>12 days left</time></div></div>
+        <div class="slbl">Reading History</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Harry Potter & the Philosopher's Stone</h5><p>Returned on time · Apr 28</p><time>Last month</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Malgudi Days — R.K. Narayan</h5><p>Returned on time · Apr 10</p><time>Last month</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">⚠️</div><div class="notice-tx"><h5>Discovery of India — Nehru</h5><p>Returned 3 days late · Fine: ₹15</p><time>2 months ago</time></div></div>
+        <div class="slbl">Library Stats</div>
+        <div style="padding:0 20px 16px;display:flex;gap:8px">
+          <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font);color:var(--or)">12</div><div style="font-size:10px;color:var(--tx3)">Books Read</div></div>
+          <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font);color:var(--mn)">2</div><div style="font-size:10px;color:var(--tx3)">Currently Issued</div></div>
+          <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font);color:var(--rd)">₹15</div><div style="font-size:10px;color:var(--tx3)">Total Fines</div></div>
+        </div>
+      </div>
+      <!-- HOLIDAYS -->
+      <div class="sub-panel" id="panel-holidays">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('holidays')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Holiday Calendar</h3></div>
+        <div class="slbl">Upcoming Holidays</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🏖️</div><div class="notice-tx"><h5>Summer Vacation</h5><p>May 20 – June 30 · 42 days</p><time>8 days away</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🕉</div><div class="notice-tx"><h5>Eid-ul-Adha</h5><p>June 7 · Saturday</p><time>26 days</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--pul)">🇮🇳</div><div class="notice-tx"><h5>Independence Day</h5><p>August 15 · Friday · Flag Hoisting</p><time>3 months</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--gdl)">🪔</div><div class="notice-tx"><h5>Dussehra</h5><p>October 2 · Thursday</p><time>5 months</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--gdl)">🎆</div><div class="notice-tx"><h5>Diwali Break</h5><p>October 20 – 25 · 6 days</p><time>5 months</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--bll)">🎄</div><div class="notice-tx"><h5>Winter Break</h5><p>Dec 25 – Jan 1 · 8 days</p><time>7 months</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">🇮🇳</div><div class="notice-tx"><h5>Republic Day</h5><p>January 26 · Monday</p><time>8 months</time></div></div>
+      </div>
+      <!-- ATTENDANCE -->
+      <div class="sub-panel" id="panel-attendance">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('attendance')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Attendance</h3></div>
+        <div style="padding:16px 20px">
+          <div style="background:linear-gradient(135deg,rgba(52,199,89,.12),rgba(52,199,89,.05));border:1px solid rgba(52,199,89,.25);border-radius:var(--r16);padding:16px;text-align:center;margin-bottom:14px">
+            <div style="font-size:36px;font-weight:800;font-family:var(--font);color:var(--mn)">94%</div>
+            <div style="font-size:12px;color:var(--tx3);margin-top:4px">Overall Attendance · 198/210 days</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-bottom:14px">
+            <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;font-family:var(--font);color:var(--mn)">198</div><div style="font-size:10px;color:var(--tx3)">Present</div></div>
+            <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;font-family:var(--font);color:var(--rd)">8</div><div style="font-size:10px;color:var(--tx3)">Absent</div></div>
+            <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;font-family:var(--font);color:var(--gd)">4</div><div style="font-size:10px;color:var(--tx3)">Late</div></div>
+          </div>
+        </div>
+        <div class="slbl">This Week</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Monday, May 11</h5><p>Present · Arrived 7:25 AM</p></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Tuesday, May 12</h5><p>Present · Arrived 7:20 AM</p></div></div>
+        <div class="slbl">Recent Absences</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">❌</div><div class="notice-tx"><h5>Friday, May 2</h5><p>Absent · Reason: Fever (parent notified)</p></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">❌</div><div class="notice-tx"><h5>Thursday, May 1</h5><p>Absent · Reason: Fever (parent notified)</p></div></div>
+        <div style="padding:12px 20px"><button class="btn bgh" style="width:100%;font-size:12px" onclick="toast('📝','Leave','Opening leave application form...')">Apply for Leave 📝</button></div>
+      </div>
+      <!-- DIARY -->
+      <div class="sub-panel" id="panel-diary">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('diary')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Student Diary</h3></div>
+        <div class="slbl">Today's Diary</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">📐</div><div class="notice-tx"><h5>Maths Homework</h5><p>Ch 12 Ex 12.3 — Q 1 to 10 · Due tomorrow</p><time>Ms. Vijaya</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🔬</div><div class="notice-tx"><h5>Science — Bring Materials</h5><p>Bring magnifying glass + mirror for light chapter</p><time>Mr. Kumar</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--pul)">📝</div><div class="notice-tx"><h5>English Essay</h5><p>"My Favourite Festival" — 200 words · Due Friday</p><time>Ms. Sharma</time></div></div>
+        <div class="slbl">Teacher Remarks</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--gdl)">⭐</div><div class="notice-tx"><h5>Excellent work in Math test!</h5><p>Ms. Vijaya · Scored 95/100 — keep it up!</p><time>Today</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">👍</div><div class="notice-tx"><h5>Good participation in Science</h5><p>Mr. Kumar · Active in lab experiment</p><time>Yesterday</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">📖</div><div class="notice-tx"><h5>Improve Hindi handwriting</h5><p>Ms. Ritu · Practice 1 page daily</p><time>3 days ago</time></div></div>
+      </div>
+      <!-- COMPLAINTS -->
+      <div class="sub-panel" id="panel-complaint">
+        <div class="sp-hdr"><div class="sp-back" onclick="closePanel('complaint')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Complaints</h3></div>
+        <div style="padding:16px 20px"><button class="btn bor" style="width:100%;font-size:12px" onclick="toast('🎫','New Ticket','Opening complaint form...')">+ Raise New Complaint 🎫</button></div>
+        <div class="slbl">Your Tickets</div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Bus late by 20 mins daily</h5><p>Resolved · Route 5 timing adjusted to 7:15 AM</p><time>3 days ago · #TKT-041</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🔄</div><div class="notice-tx"><h5>Canteen food quality concern</h5><p>In Progress · Admin is reviewing vendor</p><time>1 week ago · #TKT-038</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Broken bench in Class 5B</h5><p>Resolved · Replaced on April 28</p><time>2 weeks ago · #TKT-035</time></div></div>
+        <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Water cooler not working</h5><p>Resolved · Repaired on April 20</p><time>3 weeks ago · #TKT-031</time></div></div>
+      </div>
       <div id="tbc" style="display:none;margin:12px 20px 20px">
         <div class="dashcard" style="margin:0"><h4>📡 Broadcast</h4>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -379,6 +739,83 @@
           <button class="btn bgh" style="width:100%;margin-top:10px;height:36px;font-size:12px" onclick="toast('💬','Reminder Sent','Nudge sent to low-engagement parents via WhatsApp')">Send Reminder to Inactive Parents</button>
         </div>
       </div>
+      <!-- TEACHER PROGRESS -->
+      <div id="t-prog" class="t-section" style="display:none">
+        <!-- Class Overview Hero -->
+        <div class="t-greeting" style="border-bottom:none;padding-bottom:0">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div class="av av52 avt">SV</div>
+            <div style="flex:1"><div style="font-family:var(--font);font-size:16px;font-weight:800;color:var(--tx)">Class 5B Dashboard 📊</div><div style="font-size:12px;color:var(--tx3);margin-top:2px">Ms. Vijaya Sharma · Mathematics</div></div>
+          </div>
+          <div class="t-quickstats">
+            <div class="t-qs"><div class="t-qsv" style="color:var(--or)">42</div><div class="t-qsl">Students</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--mn)">82%</div><div class="t-qsl">Class Avg</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--pu)">94%</div><div class="t-qsl">Attendance</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--rd)">6</div><div class="t-qsl">At Risk</div></div>
+          </div>
+        </div>
+
+        <!-- Class Performance Chart -->
+        <div class="chartcard" style="margin-top:12px">
+          <div class="charthdr"><h4>Class 5B · Last 7 Test Averages</h4><span class="chip cmn">↑ 8%</span></div>
+          <div class="minichart" id="t-mchart"></div>
+        </div>
+
+        <!-- At-Risk Students -->
+        <div class="slbl">⚠️ At-Risk Students</div>
+        <div class="t-atrisk-list">
+          <div class="t-atrisk" onclick="toast('📞','Call Parent','Calling Kavita S. (Rohit\'s mother)...')"><div class="av av32" style="background:var(--rd)">RS</div><div class="t-atrisk-info"><div class="t-atrisk-name">Rohit Sinha</div><div class="t-atrisk-reason">Score dropped 45% → 32% · Absent 8 days</div></div><span class="chip crd" style="font-size:9px">Critical</span></div>
+          <div class="t-atrisk" onclick="toast('📞','Call Parent','Calling Santosh R. (Anita\'s father)...')"><div class="av av32" style="background:var(--rd)">AD</div><div class="t-atrisk-info"><div class="t-atrisk-name">Anita Devi</div><div class="t-atrisk-reason">No homework in 2 weeks · Score 38%</div></div><span class="chip crd" style="font-size:9px">Critical</span></div>
+          <div class="t-atrisk" onclick="toast('💬','Message','Messaging Deepa M...')"><div class="av av32" style="background:var(--gd)">VG</div><div class="t-atrisk-info"><div class="t-atrisk-name">Varun Gupta</div><div class="t-atrisk-reason">Score declining 72% → 58% · Needs support</div></div><span class="chip cgd" style="font-size:9px">Watch</span></div>
+          <div class="t-atrisk" onclick="toast('💬','Message','Messaging parent...')"><div class="av av32" style="background:var(--gd)">PS</div><div class="t-atrisk-info"><div class="t-atrisk-name">Pooja Sharma</div><div class="t-atrisk-reason">Absent 5 days · Homework missing</div></div><span class="chip cgd" style="font-size:9px">Watch</span></div>
+        </div>
+
+        <!-- Subject-wise Performance -->
+        <div class="slbl">Subject-wise Class Average</div>
+        <div class="t-subj-list">
+          <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--orl)">📐</div><div class="t-subj-info"><div class="t-subj-name">Mathematics</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:82%;background:var(--or)"></div></div></div><div class="t-subj-pct" style="color:var(--or)">82%</div></div>
+          <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--mnl)">🔬</div><div class="t-subj-info"><div class="t-subj-name">Science</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:76%;background:var(--mn)"></div></div></div><div class="t-subj-pct" style="color:var(--mn)">76%</div></div>
+          <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--pul)">📝</div><div class="t-subj-info"><div class="t-subj-name">English</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:79%;background:var(--pu)"></div></div></div><div class="t-subj-pct" style="color:var(--pu)">79%</div></div>
+          <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--gdl)">🕉</div><div class="t-subj-info"><div class="t-subj-name">Hindi</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:71%;background:var(--gd)"></div></div></div><div class="t-subj-pct" style="color:var(--gd)">71%</div></div>
+          <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--bll)">🌍</div><div class="t-subj-info"><div class="t-subj-name">Social Studies</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:68%;background:var(--bl)"></div></div></div><div class="t-subj-pct" style="color:var(--bl)">68%</div></div>
+        </div>
+
+        <!-- Full Student Roster -->
+        <div class="sechdr"><h3>Student Roster · 5B</h3><a onclick="toast('📊','Export','Downloading class_5b_roster.csv')">Export</a></div>
+        <div class="t-roster">
+          <div class="t-student" onclick="toast('📋','Arjun Kumar','Avg: 95% · Attendance: 98% · Math Master')"><div class="lbrank" style="color:var(--mn)">1</div><div class="av av32 avp">AK</div><div class="t-stu-info"><div class="t-stu-name">Arjun Kumar</div><div class="t-stu-score">95% · 98% att.</div></div><span class="chip cmn" style="font-size:9px">Top</span></div>
+          <div class="t-student" onclick="toast('📋','Priya Rathore','Avg: 93% · Attendance: 96%')"><div class="lbrank" style="color:var(--mn)">2</div><div class="av av32 ava">PR</div><div class="t-stu-info"><div class="t-stu-name">Priya Rathore</div><div class="t-stu-score">93% · 96% att.</div></div><span class="chip cmn" style="font-size:9px">Top</span></div>
+          <div class="t-student" onclick="toast('📋','Meena Patel','Avg: 91% · Attendance: 100%')"><div class="lbrank" style="color:var(--mn)">3</div><div class="av av32 avs">MP</div><div class="t-stu-info"><div class="t-stu-name">Meena Patel</div><div class="t-stu-score">91% · 100% att.</div></div><span class="chip cmn" style="font-size:9px">Top</span></div>
+          <div class="t-student" onclick="toast('📋','Rahul Sharma','Avg: 84% · Attendance: 92%')"><div class="lbrank" style="color:var(--tx3)">4</div><div class="av av32 avt" style="background:linear-gradient(135deg,#BA7517,#D4A020)">RS</div><div class="t-stu-info"><div class="t-stu-name">Rahul Sharma</div><div class="t-stu-score">84% · 92% att.</div></div><span class="chip cor" style="font-size:9px">Good</span></div>
+          <div class="t-student" onclick="toast('📋','Neha Verma','Avg: 78% · Attendance: 90%')"><div class="lbrank" style="color:var(--tx3)">5</div><div class="av av32" style="background:var(--s3)">NV</div><div class="t-stu-info"><div class="t-stu-name">Neha Verma</div><div class="t-stu-score">78% · 90% att.</div></div><span class="chip cor" style="font-size:9px">Good</span></div>
+          <div class="t-student" onclick="toast('📋','Vikram Singh','Avg: 74% · Attendance: 88%')"><div class="lbrank" style="color:var(--tx3)">6</div><div class="av av32" style="background:var(--pu)">VS</div><div class="t-stu-info"><div class="t-stu-name">Vikram Singh</div><div class="t-stu-score">74% · 88% att.</div></div><span class="chip cor" style="font-size:9px">Good</span></div>
+          <div class="t-student" onclick="toast('📋','Sonia Das','Avg: 72% · Attendance: 94%')"><div class="lbrank" style="color:var(--tx3)">7</div><div class="av av32" style="background:var(--bl)">SD</div><div class="t-stu-info"><div class="t-stu-name">Sonia Das</div><div class="t-stu-score">72% · 94% att.</div></div><span class="chip cor" style="font-size:9px">Avg</span></div>
+          <div class="t-student" onclick="toast('📋','Amit Patel','Avg: 65% · Attendance: 86%')"><div class="lbrank" style="color:var(--tx3)">8</div><div class="av av32" style="background:var(--gd)">AP</div><div class="t-stu-info"><div class="t-stu-name">Amit Patel</div><div class="t-stu-score">65% · 86% att.</div></div><span class="chip cgd" style="font-size:9px">Avg</span></div>
+          <div class="t-student" onclick="toast('📋','Varun Gupta','Avg: 58% · Declining from 72%')"><div class="lbrank" style="color:var(--gd)">9</div><div class="av av32" style="background:var(--gd)">VG</div><div class="t-stu-info"><div class="t-stu-name">Varun Gupta</div><div class="t-stu-score">58% · ↓ declining</div></div><span class="chip cgd" style="font-size:9px">Watch</span></div>
+          <div class="t-student" onclick="toast('📋','Rohit Sinha','Avg: 32% · Absent 8 days')"><div class="lbrank" style="color:var(--rd)">10</div><div class="av av32" style="background:var(--rd)">RS</div><div class="t-stu-info"><div class="t-stu-name">Rohit Sinha</div><div class="t-stu-score">32% · 8 absences</div></div><span class="chip crd" style="font-size:9px">At Risk</span></div>
+        </div>
+
+        <!-- Homework Tracker -->
+        <div class="sechdr"><h3>Homework Tracker</h3><a onclick="toast('📝','Assign','Opening new homework form...')">+ Assign</a></div>
+        <div class="t-hw-list">
+          <div class="t-hw" onclick="toast('📋','View','Opening Ch 12 Fractions submissions...')"><div class="t-hw-ico" style="background:var(--orl)">📐</div><div class="t-hw-info"><div class="t-hw-title">Ch 12: Fractions — Practice Set</div><div class="t-hw-sub">Due today · 28/42 submitted</div></div><div class="t-hw-pct"><div class="t-hw-ring" style="background:conic-gradient(var(--or) 67%,var(--s3) 67%)"></div><span style="font-size:10px;color:var(--or);font-weight:700">67%</span></div></div>
+          <div class="t-hw" onclick="toast('📋','View','Opening Ch 11 Geometry submissions...')"><div class="t-hw-ico" style="background:var(--mnl)">📏</div><div class="t-hw-info"><div class="t-hw-title">Ch 11: Geometry — Worksheet</div><div class="t-hw-sub">Due yesterday · 39/42 submitted</div></div><div class="t-hw-pct"><div class="t-hw-ring" style="background:conic-gradient(var(--mn) 93%,var(--s3) 93%)"></div><span style="font-size:10px;color:var(--mn);font-weight:700">93%</span></div></div>
+          <div class="t-hw" onclick="toast('📋','View','Opening Ch 10 submissions...')"><div class="t-hw-ico" style="background:var(--pul)">🔢</div><div class="t-hw-info"><div class="t-hw-title">Ch 10: Multiplication — Test</div><div class="t-hw-sub">3 days ago · 42/42 submitted</div></div><div class="t-hw-pct"><div class="t-hw-ring" style="background:conic-gradient(var(--pu) 100%,var(--s3) 100%)"></div><span style="font-size:10px;color:var(--pu);font-weight:700">100%</span></div></div>
+        </div>
+
+        <!-- Parent Engagement -->
+        <div class="sechdr"><h3>Parent Engagement</h3><a onclick="toast('📊','CSV Export','Downloading engagement_report.csv')">Export</a></div>
+        <div class="dashcard">
+          <h4>📊 Class 5B — Weekly Engagement</h4>
+          <div class="engrow"><span class="engnm">Suneeta K.</span><div class="engbar"><div class="engfill" style="width:92%"></div></div><span class="engpct">92%</span></div>
+          <div class="engrow"><span class="engnm">Rajesh P.</span><div class="engbar"><div class="engfill" style="width:78%"></div></div><span class="engpct">78%</span></div>
+          <div class="engrow"><span class="engnm">Deepa M.</span><div class="engbar"><div class="engfill" style="width:64%"></div></div><span class="engpct">64%</span></div>
+          <div class="engrow"><span class="engnm">Santosh R.</span><div class="engbar"><div class="engfill" style="width:31%;background:var(--rd)"></div></div><span class="engpct" style="color:var(--rd)">31%</span></div>
+          <div class="engrow"><span class="engnm">Kavita S.</span><div class="engbar"><div class="engfill" style="width:18%;background:var(--rd)"></div></div><span class="engpct" style="color:var(--rd)">18%</span></div>
+          <button class="btn bgh" style="width:100%;margin-top:10px;height:36px;font-size:12px" onclick="toast('💬','Reminder Sent','Nudge sent to low-engagement parents')">Send Reminder to Inactive Parents</button>
+        </div>
+        <div style="height:20px"></div>
+      </div>
       <div style="height:20px"></div>
     </div>
     <!-- ═══ MESSAGES ═══ -->
@@ -442,6 +879,71 @@
           <div class="slotrow"><div class="slottm">Sat 11 AM</div><div class="slotnm">— Open —</div><span class="slotopn" onclick="toast('📅','Slot Opened','Parents can now book this slot')">Open</span></div>
           <div class="slotrow"><div class="slottm">Sat 12 PM</div><div class="slotnm">Deepa M. (Meena)</div><span class="slotbkd">Booked</span></div>
         </div>
+      </div>
+      <!-- TEACHER MESSAGES -->
+      <div id="t-msgs" class="t-section" style="display:none">
+        <!-- Broadcast Composer -->
+        <div class="t-greeting" style="padding:16px 20px;border-bottom:1px solid var(--br)">
+          <div style="font-family:var(--font);font-size:15px;font-weight:800;color:var(--tx);margin-bottom:10px">📢 Broadcast to Parents</div>
+          <div style="background:var(--s2);border-radius:var(--r12);padding:12px;border:1px solid var(--br);min-height:60px;font-size:13px;color:var(--tx3);cursor:text" onclick="toast('✏️','Composer','Opening broadcast editor...')">Type an announcement for all 42 parents...</div>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn bgh" style="flex:1;height:34px;font-size:12px" onclick="toast('📸','Attach','Adding photo...')">📸 Photo</button>
+            <button class="btn bgh" style="flex:1;height:34px;font-size:12px" onclick="toast('🎤','Voice','Recording voice note...')">🎤 Voice</button>
+            <button class="btn bor" style="flex:1;height:34px;font-size:12px" onclick="toast('📢','Sent!','Broadcast sent to 42 parents via app + WhatsApp')">Send All</button>
+          </div>
+        </div>
+
+        <!-- Upcoming Meetings -->
+        <div class="slbl">Upcoming Meetings</div>
+        <div class="t-meetings">
+          <div class="t-meet" onclick="toast('📹','Join','Opening Google Meet link...')"><div class="t-meet-date"><div class="t-meet-day">THU</div><div class="t-meet-dd">20</div></div><div class="t-meet-info"><div class="t-meet-name">Suneeta K. (Arjun's mother)</div><div class="t-meet-sub">10:00 AM · Video Call · 15 min</div></div><span class="chip cmn" style="font-size:9px">Confirmed</span></div>
+          <div class="t-meet" onclick="toast('📹','Join','Opening Google Meet link...')"><div class="t-meet-date"><div class="t-meet-day">FRI</div><div class="t-meet-dd">21</div></div><div class="t-meet-info"><div class="t-meet-name">Rajesh P. (Priya's father)</div><div class="t-meet-sub">11:00 AM · Video Call · 15 min</div></div><span class="chip cmn" style="font-size:9px">Confirmed</span></div>
+          <div class="t-meet" onclick="toast('📹','Join','Opening Google Meet link...')"><div class="t-meet-date"><div class="t-meet-day">SAT</div><div class="t-meet-dd">22</div></div><div class="t-meet-info"><div class="t-meet-name">Deepa M. (Meena's mother)</div><div class="t-meet-sub">12:00 PM · Video Call · 15 min</div></div><span class="chip cmn" style="font-size:9px">Confirmed</span></div>
+        </div>
+
+        <!-- Parent DMs (Teacher POV) -->
+        <div class="slbl">Parent Messages</div>
+        <div class="dmrow" onclick="openChat()">
+          <div class="av av40 avp">SK</div>
+          <div class="dminf"><div class="dmnm">Suneeta K. (Arjun's mother)</div><div class="dmpv unrd">Thank you! Can I book a PTM? 🙏</div></div>
+          <div class="dmmeta"><div class="dmtm" style="color:var(--or);font-weight:700">2h</div><div class="dmcnt">2</div></div>
+        </div>
+        <div class="dmrow" onclick="openChat()">
+          <div class="av av40 ava">RP</div>
+          <div class="dminf"><div class="dmnm">Rajesh P. (Priya's father)</div><div class="dmpv unrd">What's the science project deadline?</div></div>
+          <div class="dmmeta"><div class="dmtm" style="color:var(--or);font-weight:700">4h</div><div class="dmcnt">1</div></div>
+        </div>
+        <div class="dmrow" onclick="openChat()">
+          <div class="av av40 avs">DM</div>
+          <div class="dminf"><div class="dmnm">Deepa M. (Meena's mother)</div><div class="dmpv">Thanks for the update on results ✓</div></div>
+          <div class="dmmeta"><div class="dmtm">Mon</div></div>
+        </div>
+        <div class="dmrow" onclick="openChat()">
+          <div class="av av40" style="background:var(--gd)">SR</div>
+          <div class="dminf"><div class="dmnm">Santosh R. (Rohit's father)</div><div class="dmpv">Rohit is sick, will be absent this week</div></div>
+          <div class="dmmeta"><div class="dmtm">Sun</div></div>
+        </div>
+        <div class="dmrow" onclick="openChat()">
+          <div class="av av40" style="background:var(--bl)">KS</div>
+          <div class="dminf"><div class="dmnm">Kavita S. (Anita's mother)</div><div class="dmpv">Please share Anita's test marks</div></div>
+          <div class="dmmeta"><div class="dmtm">Sat</div></div>
+        </div>
+        <div class="dmrow" onclick="openChat()">
+          <div class="av av40" style="background:var(--rd)">MV</div>
+          <div class="dminf"><div class="dmnm">Meera V. (Sonia's mother)</div><div class="dmpv">Is there a make-up test for Unit 2?</div></div>
+          <div class="dmmeta"><div class="dmtm">Fri</div></div>
+        </div>
+
+        <!-- My Slots -->
+        <div class="sechdr"><h3>My Available Slots</h3><a onclick="toast('➕','Add Slots','Opening slot manager...')">+ Add Slots</a></div>
+        <div class="slotcard" style="margin:0 20px 16px">
+          <div class="slotrow"><div class="slottm">Thu 10 AM</div><div class="slotnm">Suneeta K. (Arjun)</div><span class="slotbkd">Booked</span></div>
+          <div class="slotrow"><div class="slottm">Fri 11 AM</div><div class="slotnm">Rajesh P. (Priya)</div><span class="slotbkd">Booked</span></div>
+          <div class="slotrow"><div class="slottm">Sat 10 AM</div><div class="slotnm">— Open —</div><span class="slotopn" onclick="toast('📅','Slot Opened','Parents can now book this slot')">Open</span></div>
+          <div class="slotrow"><div class="slottm">Sat 11 AM</div><div class="slotnm">— Open —</div><span class="slotopn" onclick="toast('📅','Slot Opened','Parents can now book this slot')">Open</span></div>
+          <div class="slotrow"><div class="slottm">Sat 12 PM</div><div class="slotnm">Deepa M. (Meena)</div><span class="slotbkd">Booked</span></div>
+        </div>
+        <div style="height:20px"></div>
       </div>
     </div>
     <!-- ═══ PROFILE ═══ -->
@@ -546,6 +1048,54 @@
             <span class="prefval" onclick="toast('📊','Exported','class_5b_report.csv downloaded')">CSV Export ›</span>
           </div>
         </div>
+      </div>
+      <!-- TEACHER PROFILE -->
+      <div id="t-prof" class="t-section" style="display:none">
+        <div class="profhero">
+          <div class="av av72 avt" style="margin:0 auto 12px">SV</div>
+          <div style="font-family:var(--font);font-size:18px;font-weight:800;color:var(--tx);margin-bottom:4px">Ms. Vijaya Sharma</div>
+          <div style="font-size:13px;color:var(--tx3);margin-bottom:10px">Class Teacher · 5B · Mathematics</div>
+          <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+            <span class="chip cpu">Teacher</span>
+            <span class="chip cmn">8 yrs experience</span>
+            <span class="chip cgd">⭐ 4.8 Rating</span>
+          </div>
+        </div>
+        <!-- Teaching Stats -->
+        <div class="profscore" style="background:linear-gradient(135deg,rgba(139,127,240,.12),rgba(139,127,240,.05));border-color:rgba(139,127,240,.25)">
+          <div class="t-quickstats" style="margin-bottom:0">
+            <div class="t-qs"><div class="t-qsv" style="color:var(--pu)">3</div><div class="t-qsl">Classes</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--or)">118</div><div class="t-qsl">Students</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--mn)">96%</div><div class="t-qsl">Engagement</div></div>
+            <div class="t-qs"><div class="t-qsv" style="color:var(--gd)">4.8</div><div class="t-qsl">Rating</div></div>
+          </div>
+        </div>
+        <!-- My Classes -->
+        <div class="slbl">My Classes</div>
+        <div class="t-classes">
+          <div class="t-class" onclick="toast('📚','Class 5B','Switching to Class 5B dashboard...')"><div class="t-class-ico" style="background:var(--orl)">5B</div><div class="t-class-info"><div class="t-class-name">Class 5B · Mathematics</div><div class="t-class-sub">42 students · Class Teacher · 82% avg</div></div><span class="chip cor" style="font-size:9px">Active</span></div>
+          <div class="t-class" onclick="toast('📚','Class 5A','Switching to Class 5A dashboard...')"><div class="t-class-ico" style="background:var(--pul)">5A</div><div class="t-class-info"><div class="t-class-name">Class 5A · Mathematics</div><div class="t-class-sub">38 students · Subject Teacher · 78% avg</div></div></div>
+          <div class="t-class" onclick="toast('📚','Class 4A','Switching to Class 4A dashboard...')"><div class="t-class-ico" style="background:var(--mnl)">4A</div><div class="t-class-info"><div class="t-class-name">Class 4A · Mathematics</div><div class="t-class-sub">38 students · Subject Teacher · 85% avg</div></div></div>
+          <div class="t-class" onclick="toast('📚','Class 6B','Switching to Class 6B dashboard...')"><div class="t-class-ico" style="background:var(--gdl)">6B</div><div class="t-class-info"><div class="t-class-name">Class 6B · Mathematics</div><div class="t-class-sub">40 students · Subject Teacher · 74% avg</div></div></div>
+        </div>
+        <!-- Teacher Settings -->
+        <div class="slbl">Teacher Settings</div>
+        <div class="prefsec">
+          <div class="prefrow"><span class="preflbl">Auto-Translate Posts</span><div class="tgl on" onclick="this.classList.toggle('on');toast('🌐','Auto-Translate',this.classList.contains('on')?'Posts auto-translated to Hindi':'Auto-translate disabled')"><div class="tglth"></div></div></div>
+          <div class="prefrow"><span class="preflbl">Meeting Duration</span><span class="prefval" onclick="toast('⏱️','Duration','Set to 15 minutes per slot')">15 min ›</span></div>
+          <div class="prefrow"><span class="preflbl">WhatsApp Broadcast</span><div class="tgl on" onclick="this.classList.toggle('on')"><div class="tglth"></div></div></div>
+          <div class="prefrow"><span class="preflbl">Export Class Data</span><span class="prefval" onclick="toast('📊','Exported','class_5b_report.csv downloaded')">CSV Export ›</span></div>
+          <div class="prefrow"><span class="preflbl">Parent Read Receipts</span><div class="tgl on" onclick="this.classList.toggle('on')"><div class="tglth"></div></div></div>
+        </div>
+        <div class="slbl">Account</div>
+        <div class="prefsec">
+          <div class="prefrow"><span class="preflbl">Employee ID</span><span class="prefval">TCH-2018-042</span></div>
+          <div class="prefrow"><span class="preflbl">Phone Number</span><span class="prefval">+91 99876 54321</span></div>
+          <div class="prefrow"><span class="preflbl">School</span><span class="prefval" onclick="toast('🏫','School','Govt. Primary School No. 4, Sector 12')">GPS No. 4 ›</span></div>
+          <div class="prefrow"><span class="preflbl">Privacy & Data</span><span class="prefval" onclick="toast('🔒','Privacy','DPDP Act 2023 compliant')">View Policy ›</span></div>
+          <div class="prefrow" style="border-bottom:none"><span class="preflbl" style="color:var(--rd)">Sign Out</span><span class="prefval" style="color:var(--rd)" onclick="toast('👋','Signed Out','See you tomorrow!')">Sign Out ›</span></div>
+        </div>
+        <div style="height:20px"></div>
       </div>
       <div style="height:20px"></div>
     </div>

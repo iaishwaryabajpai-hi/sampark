@@ -99,15 +99,15 @@
     </div>
   </div>
   <div class="role-bar">
-    <div class="rp ap" id="rp-parent" onclick="setRole('parent')"><div class="rp-dot" style="background:var(--or)"></div>Parent</div>
-    <div class="rp" id="rp-teacher" onclick="setRole('teacher')"><div class="rp-dot" style="background:var(--pu)"></div>Teacher</div>
-    <div class="rp" id="rp-student" onclick="setRole('student')"><div class="rp-dot" style="background:var(--mn)"></div>Student</div>
+    <div class="rp ap" id="rp-parent" onclick="setRole('parent')"><div class="rp-dot" style="background:var(--or)"></div><span data-i18n="parent">Parent</span></div>
+    <div class="rp" id="rp-teacher" onclick="setRole('teacher')"><div class="rp-dot" style="background:var(--pu)"></div><span data-i18n="teacher">Teacher</span></div>
+    <div class="rp" id="rp-student" onclick="setRole('student')"><div class="rp-dot" style="background:var(--mn)"></div><span data-i18n="student">Student</span></div>
   </div>
   <div class="screens">
     <!-- ═══ FEED ═══ -->
     <div class="scr active" id="s-feed">
       <div class="stbar">
-        <div class="stit"><div class="stadd" onclick="toast('📷','Add Story','Camera opening...')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><span class="stnm">Your story</span></div>
+        <div class="stit"><div class="stadd" onclick="toast('📷','Add Story','Camera opening...')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><span class="stnm" data-i18n="yourStory">Your story</span></div>
         <div class="stit" onclick="openStory('SV','Ms. Vijaya','2h ago','📸','Class 5B Math Results 🎉','Class average 82/100 — our best this semester!','img_math.png')"><div class="string live"><div class="stinner"><div class="av av32 avt">SV</div></div></div><span class="stnm">Ms. Vijaya</span></div>
         <div class="stit" onclick="openStory('PS','Principal','5h ago','🏫','Annual Sports Day 🏆','Sports Day prep in full swing — parents welcome!','img_sports.png')"><div class="string live"><div class="stinner"><div class="av av32 ava">PS</div></div></div><span class="stnm">Principal</span></div>
         <div class="stit" onclick="openStory('RG','Ms. Ritu','1d ago','📚','Book Fair Coming! 📖','500+ books at Scholastic Book Fair — May 18-20!','img_bookfair.png')"><div class="string seen"><div class="stinner"><div class="av av32 avs">RG</div></div></div><span class="stnm">Ms. Ritu</span></div>
@@ -400,27 +400,27 @@
     <!-- ═══ EXPLORE ═══ -->
     <div class="scr" id="s-comm">
       <div class="comm-hero">
-        <h2>Explore 🎓</h2>
-        <p>Your school, organized</p>
+        <h2 data-i18n="explore">Explore 🎓</h2>
+        <p data-i18n="exploresub">Your school, organized</p>
       </div>
       <div class="explore-grid">
-        <div class="exp-btn" onclick="openPanel('events')"><div class="exp-ico" style="background:var(--orl)">📅</div><div class="exp-lbl">Events</div></div>
-        <div class="exp-btn" onclick="openPanel('clubs')"><div class="exp-ico" style="background:var(--pul)">🤝</div><div class="exp-lbl">Clubs</div></div>
-        <div class="exp-btn" onclick="openPanel('syllabus')"><div class="exp-ico" style="background:var(--mnl)">📋</div><div class="exp-lbl">Syllabus</div></div>
-        <div class="exp-btn" onclick="openPanel('schedule')"><div class="exp-ico" style="background:var(--gdl)">🗓</div><div class="exp-lbl">Schedule</div></div>
-        <div class="exp-btn" onclick="openPanel('notices')"><div class="exp-ico" style="background:var(--rdl)">📢</div><div class="exp-lbl">Notices</div></div>
-        <div class="exp-btn" onclick="openPanel('compete')"><div class="exp-ico" style="background:var(--bll)">🏆</div><div class="exp-lbl">Compete</div></div>
-        <div class="exp-btn" onclick="openPanel('channels')"><div class="exp-ico" style="background:rgba(255,255,255,.06)">💬</div><div class="exp-lbl">Channels</div></div>
-        <div class="exp-btn" onclick="openPanel('polls')"><div class="exp-ico" style="background:var(--orl)">📊</div><div class="exp-lbl">Polls</div></div>
-        <div class="exp-btn" onclick="openPanel('gallery')"><div class="exp-ico" style="background:var(--pul)">📸</div><div class="exp-lbl">Gallery</div></div>
-        <div class="exp-btn" onclick="openPanel('fees')"><div class="exp-ico" style="background:rgba(232,160,32,.12)">💰</div><div class="exp-lbl">Fees</div></div>
-        <div class="exp-btn" onclick="openPanel('report')"><div class="exp-ico" style="background:rgba(90,200,250,.12)">📝</div><div class="exp-lbl">Report Card</div></div>
-        <div class="exp-btn" onclick="openPanel('bus')"><div class="exp-ico" style="background:rgba(255,59,48,.12)">🚌</div><div class="exp-lbl">Bus Track</div></div>
-        <div class="exp-btn" onclick="openPanel('library')"><div class="exp-ico" style="background:rgba(175,82,222,.12)">📚</div><div class="exp-lbl">Library</div></div>
-        <div class="exp-btn" onclick="openPanel('holidays')"><div class="exp-ico" style="background:rgba(52,199,89,.12)">🏖️</div><div class="exp-lbl">Holidays</div></div>
-        <div class="exp-btn" onclick="openPanel('attendance')"><div class="exp-ico" style="background:rgba(45,127,249,.12)">✅</div><div class="exp-lbl">Attendance</div></div>
-        <div class="exp-btn" onclick="openPanel('diary')"><div class="exp-ico" style="background:rgba(255,214,10,.12)">📖</div><div class="exp-lbl">Diary</div></div>
-        <div class="exp-btn" onclick="openPanel('complaint')"><div class="exp-ico" style="background:rgba(255,59,48,.12)">🎫</div><div class="exp-lbl">Complaints</div></div>
+        <div class="exp-btn" onclick="openPanel('events')"><div class="exp-ico" style="background:var(--orl)">📅</div><div class="exp-lbl" data-i18n="events">Events</div></div>
+        <div class="exp-btn" onclick="openPanel('clubs')"><div class="exp-ico" style="background:var(--pul)">🤝</div><div class="exp-lbl" data-i18n="clubs">Clubs</div></div>
+        <div class="exp-btn" onclick="openPanel('syllabus')"><div class="exp-ico" style="background:var(--mnl)">📋</div><div class="exp-lbl" data-i18n="syllabus">Syllabus</div></div>
+        <div class="exp-btn" onclick="openPanel('schedule')"><div class="exp-ico" style="background:var(--gdl)">🗓</div><div class="exp-lbl" data-i18n="schedule">Schedule</div></div>
+        <div class="exp-btn" onclick="openPanel('notices')"><div class="exp-ico" style="background:var(--rdl)">📢</div><div class="exp-lbl" data-i18n="notices">Notices</div></div>
+        <div class="exp-btn" onclick="openPanel('compete')"><div class="exp-ico" style="background:var(--bll)">🏆</div><div class="exp-lbl" data-i18n="compete">Compete</div></div>
+        <div class="exp-btn" onclick="openPanel('channels')"><div class="exp-ico" style="background:rgba(255,255,255,.06)">💬</div><div class="exp-lbl" data-i18n="channels">Channels</div></div>
+        <div class="exp-btn" onclick="openPanel('polls')"><div class="exp-ico" style="background:var(--orl)">📊</div><div class="exp-lbl" data-i18n="polls">Polls</div></div>
+        <div class="exp-btn" onclick="openPanel('gallery')"><div class="exp-ico" style="background:var(--pul)">📸</div><div class="exp-lbl" data-i18n="gallery">Gallery</div></div>
+        <div class="exp-btn" onclick="openPanel('fees')"><div class="exp-ico" style="background:rgba(232,160,32,.12)">💰</div><div class="exp-lbl" data-i18n="fees">Fees</div></div>
+        <div class="exp-btn" onclick="openPanel('report')"><div class="exp-ico" style="background:rgba(90,200,250,.12)">📝</div><div class="exp-lbl" data-i18n="report">Report Card</div></div>
+        <div class="exp-btn" onclick="openPanel('bus')"><div class="exp-ico" style="background:rgba(255,59,48,.12)">🚌</div><div class="exp-lbl" data-i18n="bus">Bus Track</div></div>
+        <div class="exp-btn" onclick="openPanel('library')"><div class="exp-ico" style="background:rgba(175,82,222,.12)">📚</div><div class="exp-lbl" data-i18n="library">Library</div></div>
+        <div class="exp-btn" onclick="openPanel('holidays')"><div class="exp-ico" style="background:rgba(52,199,89,.12)">🏖️</div><div class="exp-lbl" data-i18n="holidays">Holidays</div></div>
+        <div class="exp-btn" onclick="openPanel('attendance')"><div class="exp-ico" style="background:rgba(45,127,249,.12)">✅</div><div class="exp-lbl" data-i18n="attendance">Attendance</div></div>
+        <div class="exp-btn" onclick="openPanel('diary')"><div class="exp-ico" style="background:rgba(255,214,10,.12)">📖</div><div class="exp-lbl" data-i18n="diary">Diary</div></div>
+        <div class="exp-btn" onclick="openPanel('complaint')"><div class="exp-ico" style="background:rgba(255,59,48,.12)">🎫</div><div class="exp-lbl" data-i18n="complaints">Complaints</div></div>
       </div>
       <!-- EVENTS -->
       <div class="sub-panel" id="panel-events">
@@ -1204,29 +1204,29 @@
   <div class="bnav">
     <div class="ni on" id="ni-feed" onclick="switchTab('feed')">
       <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <span>Feed</span>
+      <span data-i18n="feed">Feed</span>
     </div>
     <div class="ni" id="ni-comm" onclick="switchTab('comm')">
       <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      <span>Community</span>
+      <span data-i18n="community">Community</span>
       <span class="npip"></span>
     </div>
     <div class="ni" id="ni-prog" onclick="switchTab('prog')">
       <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      <span>Progress</span>
+      <span data-i18n="progress">Progress</span>
     </div>
     <div class="ni" id="ni-msgs" onclick="switchTab('msgs')">
       <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      <span>Messages</span>
+      <span data-i18n="messages">Messages</span>
       <span class="npip"></span>
     </div>
     <div class="ni" id="ni-play" onclick="switchTab('play')">
       <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/></svg>
-      <span>Play</span>
+      <span data-i18n="play">Play</span>
     </div>
     <div class="ni" id="ni-prof" onclick="switchTab('prof')">
       <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span>Profile</span>
+      <span data-i18n="profile">Profile</span>
     </div>
   </div>
 </div><!-- end .device -->

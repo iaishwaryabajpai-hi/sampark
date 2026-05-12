@@ -187,7 +187,58 @@ function votePoll(opt,pct,grad){
 }
 function selDay(el){document.querySelectorAll('.calday').forEach(d=>d.classList.remove('sel'));el.classList.add('sel');}
 function selSlot(el,time){document.querySelectorAll('.tslot.avail').forEach(s=>s.classList.remove('sel'));el.classList.add('sel');toast('✅','Slot Selected',time+' — click Confirm to book');}
-function setLang(btn,lang){document.querySelectorAll('.lngbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');toast('🌐','Language Changed','App will now display in '+lang);}
+let currentLang='English';
+const i18n={
+  English:{
+    feed:'Feed',community:'Community',progress:'Progress',messages:'Messages',play:'Play',profile:'Profile',
+    explore:'Explore 🎓',exploresub:'Your school, organized',
+    events:'Events',clubs:'Clubs',syllabus:'Syllabus',schedule:'Schedule',notices:'Notices',compete:'Compete',
+    channels:'Channels',polls:'Polls',gallery:'Gallery',fees:'Fees',report:'Report Card',bus:'Bus Track',
+    library:'Library',holidays:'Holidays',attendance:'Attendance',diary:'Diary',complaints:'Complaints',
+    yourStory:'Your story',preferences:'Preferences',language:'Language',account:'Account',
+    whatsapp:'WhatsApp Alerts',push:'Push Notifications',darkMode:'Dark Mode',signout:'Sign Out',
+    bookMeeting:'Book a Video Meeting',typeMsg:'Type a message...',
+    parent:'Parent',teacher:'Teacher',student:'Student'
+  },
+  Hindi:{
+    feed:'फ़ीड',community:'समुदाय',progress:'प्रगति',messages:'संदेश',play:'खेल',profile:'प्रोफ़ाइल',
+    explore:'एक्सप्लोर 🎓',exploresub:'आपका स्कूल, व्यवस्थित',
+    events:'कार्यक्रम',clubs:'क्लब',syllabus:'पाठ्यक्रम',schedule:'समय-सारणी',notices:'सूचनाएं',compete:'प्रतियोगिता',
+    channels:'चैनल',polls:'मतदान',gallery:'गैलरी',fees:'शुल्क',report:'रिपोर्ट कार्ड',bus:'बस ट्रैक',
+    library:'पुस्तकालय',holidays:'छुट्टियां',attendance:'उपस्थिति',diary:'डायरी',complaints:'शिकायतें',
+    yourStory:'आपकी कहानी',preferences:'प्राथमिकताएं',language:'भाषा',account:'खाता',
+    whatsapp:'व्हाट्सएप अलर्ट',push:'पुश नोटिफिकेशन',darkMode:'डार्क मोड',signout:'साइन आउट',
+    bookMeeting:'वीडियो मीटिंग बुक करें',typeMsg:'संदेश लिखें...',
+    parent:'अभिभावक',teacher:'शिक्षक',student:'छात्र'
+  },
+  Marathi:{
+    feed:'फीड',community:'समुदाय',progress:'प्रगती',messages:'संदेश',play:'खेळ',profile:'प्रोफाइल',
+    explore:'एक्सप्लोर 🎓',exploresub:'तुमची शाळा, व्यवस्थित',
+    events:'कार्यक्रम',clubs:'क्लब',syllabus:'अभ्यासक्रम',schedule:'वेळापत्रक',notices:'सूचना',compete:'स्पर्धा',
+    channels:'चॅनेल',polls:'मतदान',gallery:'गॅलरी',fees:'शुल्क',report:'गुणपत्रिका',bus:'बस ट्रॅक',
+    library:'वाचनालय',holidays:'सुट्ट्या',attendance:'उपस्थिती',diary:'डायरी',complaints:'तक्रारी',
+    yourStory:'तुमची गोष्ट',preferences:'प्राधान्ये',language:'भाषा',account:'खाते',
+    whatsapp:'व्हाट्सएप अलर्ट',push:'पुश सूचना',darkMode:'डार्क मोड',signout:'साइन आउट',
+    bookMeeting:'व्हिडिओ मीटिंग बुक करा',typeMsg:'संदेश लिहा...',
+    parent:'पालक',teacher:'शिक्षक',student:'विद्यार्थी'
+  }
+};
+function setLang(btn,lang){
+  document.querySelectorAll('.lngbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentLang=lang;
+  const dict=i18n[lang]||i18n.English;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(dict[key])el.textContent=dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key=el.getAttribute('data-i18n-placeholder');
+    if(dict[key])el.placeholder=dict[key];
+  });
+  const langEmoji=lang==='Hindi'?'🇮🇳 हिंदी':lang==='Marathi'?'🇮🇳 मराठी':'🇬🇧 English';
+  toast('🌐',langEmoji,lang==='Hindi'?'ऐप अब हिंदी में दिखेगा':lang==='Marathi'?'ऐप आता मराठीत दिसेल':'App now in English');
+}
 function openNotif(){document.getElementById('notifPanel').classList.add('open');}
 function closeNotif(){document.getElementById('notifPanel').classList.remove('open');}
 function buildChart(){

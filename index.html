@@ -64,7 +64,7 @@
   </div>
   <div class="chatinput">
     <div class="hbtn" onclick="toast('🎤','Voice Note','Hold to record in Hindi')"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-    <input type="text" placeholder="Type a message..." id="ci" onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <input type="text" placeholder="Type a message..." data-i18n-placeholder="typeMsg" id="ci" onkeydown="if(event.key==='Enter')sendMsg()"/>
     <button class="chatsend" onclick="sendMsg()"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
   </div>
 </div>
@@ -352,7 +352,7 @@
         </div>
 
         <!-- Quick Actions -->
-        <div class="slbl">Quick Actions</div>
+        <div class="slbl" data-i18n="quickActions">Quick Actions</div>
         <div class="t-actions">
           <div class="t-act" onclick="toast('📢','Post Update','Opening composer for 42 parents...')"><div class="t-act-ico" style="background:var(--orl)">📢</div><div class="t-act-lbl">Post Update</div></div>
           <div class="t-act" onclick="toast('📋','Attendance','Marking attendance for Class 5B...')"><div class="t-act-ico" style="background:var(--mnl)">📋</div><div class="t-act-lbl">Attendance</div></div>
@@ -363,7 +363,7 @@
         </div>
 
         <!-- Today's Schedule -->
-        <div class="slbl">Today's Schedule</div>
+        <div class="slbl" data-i18n="todaySchedule">Today's Schedule</div>
         <div class="t-sched-list">
           <div class="t-sched-row t-sched-now"><div class="t-sched-time">8:00</div><div class="t-sched-dot" style="background:var(--or)"></div><div class="t-sched-info"><div class="t-sched-subj">Mathematics · Class 5B</div><div class="t-sched-room">Room 204 · Ch 12: Fractions</div></div><span class="chip cor" style="font-size:9px">Now</span></div>
           <div class="t-sched-row"><div class="t-sched-time">9:00</div><div class="t-sched-dot" style="background:var(--pu)"></div><div class="t-sched-info"><div class="t-sched-subj">Mathematics · Class 5A</div><div class="t-sched-room">Room 201 · Ch 11: Geometry</div></div></div>
@@ -375,7 +375,7 @@
         </div>
 
         <!-- Pending Tasks -->
-        <div class="slbl">Pending Tasks</div>
+        <div class="slbl" data-i18n="pendingTasks">Pending Tasks</div>
         <div class="t-tasks">
           <div class="t-task" onclick="toast('📋','Homework','Opening submissions for Class 5B...')"><div class="t-task-ico" style="background:var(--rdl);color:var(--rd)">!</div><div class="t-task-info"><div class="t-task-title">Review 5B Math Homework</div><div class="t-task-sub">28/42 submitted · Due today</div></div><span class="chip crd" style="font-size:9px">Urgent</span></div>
           <div class="t-task" onclick="toast('💬','Reply','Opening message from Rajesh P...')"><div class="t-task-ico" style="background:var(--orl);color:var(--or)">💬</div><div class="t-task-info"><div class="t-task-title">Reply to Rajesh P.</div><div class="t-task-sub">Asked about Priya's science marks</div></div><span class="chip cor" style="font-size:9px">1h ago</span></div>
@@ -385,7 +385,7 @@
         </div>
 
         <!-- Recent Activity -->
-        <div class="slbl">Your Recent Activity</div>
+        <div class="slbl" data-i18n="recentActivity">Your Recent Activity</div>
         <div class="t-activity">
           <div class="t-actrow"><div class="t-actdot" style="background:var(--or)"></div><div class="t-actinfo"><span>You shared <strong>Class 5B math results</strong></span><div class="t-actmeta">42 parents notified · 38 read · 2h ago</div></div></div>
           <div class="t-actrow"><div class="t-actdot" style="background:var(--mn)"></div><div class="t-actinfo"><span>Attendance marked for <strong>Class 5B</strong></span><div class="t-actmeta">38 present, 4 absent · 8:15 AM</div></div></div>
@@ -522,7 +522,7 @@
       <!-- GALLERY -->
       <div class="sub-panel" id="panel-gallery">
         <div class="sp-hdr"><div class="sp-back" onclick="closePanel('gallery')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Photo Gallery</h3></div>
-        <div class="slbl">Recent Events</div>
+        <div class="slbl" data-i18n="recentEvents">Recent Events</div>
         <div class="notice-item" onclick="toast('📸','Opening','Sports Day 2026 album')"><div class="notice-dot" style="background:var(--mnl)">🏅</div><div class="notice-tx"><h5>Annual Sports Day 2026</h5><p>48 photos · March 15</p><time>2 weeks ago</time></div></div>
         <div class="notice-item" onclick="toast('📸','Opening','Republic Day album')"><div class="notice-dot" style="background:var(--orl)">🇮🇳</div><div class="notice-tx"><h5>Republic Day Celebration</h5><p>32 photos · Jan 26</p><time>3 months ago</time></div></div>
         <div class="notice-item" onclick="toast('📸','Opening','Science Fair album')"><div class="notice-dot" style="background:var(--bll)">🔬</div><div class="notice-tx"><h5>Science Exhibition</h5><p>56 photos · Feb 10</p><time>2 months ago</time></div></div>
@@ -544,7 +544,7 @@
             <button class="btn bor" style="width:100%;height:36px;font-size:12px" onclick="toast('💳','Payment','Opening UPI / payment gateway...')">Pay Now via UPI 💳</button>
           </div>
         </div>
-        <div class="slbl">Payment History</div>
+        <div class="slbl" data-i18n="paymentHistory">Payment History</div>
         <div class="notice-item" onclick="toast('🧾','Receipt','Downloading receipt...')"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Term 1 Fee — ₹4,500</h5><p>Paid via UPI · Txn: SAM20260415</p><time>15 Apr 2026</time></div></div>
         <div class="notice-item" onclick="toast('🧾','Receipt','Downloading receipt...')"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Annual Charges — ₹2,000</h5><p>Paid via Bank Transfer</p><time>5 Apr 2026</time></div></div>
         <div class="notice-item" onclick="toast('🧾','Receipt','Downloading receipt...')"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Exam Fee — ₹500</h5><p>Paid via Cash at Office</p><time>20 Mar 2026</time></div></div>
@@ -577,26 +577,26 @@
             <div style="font-size:12px;color:var(--tx3)">Driver: Mr. Ramesh · Ph: +91 98765 11111</div>
           </div>
         </div>
-        <div class="slbl">Route Details</div>
+        <div class="slbl" data-i18n="routeDetails">Route Details</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🟢</div><div class="notice-tx"><h5>Stop 1 · Sector 12 Gate</h5><p>Pickup: 7:10 AM · Arjun's stop</p><time>0.5 km</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🟡</div><div class="notice-tx"><h5>Stop 2 · Market Chowk</h5><p>Pickup: 7:15 AM</p><time>1.2 km</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🟡</div><div class="notice-tx"><h5>Stop 3 · Housing Colony</h5><p>Pickup: 7:20 AM</p><time>2.0 km</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--bll)">🏫</div><div class="notice-tx"><h5>School · GPS No. 4</h5><p>Arrival: 7:30 AM</p><time>3.5 km</time></div></div>
-        <div class="slbl">Drop Schedule</div>
+        <div class="slbl" data-i18n="dropSchedule">Drop Schedule</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--pul)">🏫</div><div class="notice-tx"><h5>School Departure</h5><p>Drop bus leaves at 2:30 PM</p><time>Daily</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🏠</div><div class="notice-tx"><h5>Drop at Sector 12 Gate</h5><p>Expected: 2:50 PM</p><time>Arjun's stop</time></div></div>
       </div>
       <!-- LIBRARY -->
       <div class="sub-panel" id="panel-library">
         <div class="sp-hdr"><div class="sp-back" onclick="closePanel('library')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Library</h3></div>
-        <div class="slbl">Currently Issued</div>
+        <div class="slbl" data-i18n="currentlyIssued">Currently Issued</div>
         <div class="notice-item" onclick="toast('📚','Book','Due in 5 days')"><div class="notice-dot" style="background:var(--orl)">📕</div><div class="notice-tx"><h5>The Story of My Life — Helen Keller</h5><p>Issued: May 5 · Due: May 19</p><time>5 days left</time></div></div>
         <div class="notice-item" onclick="toast('📚','Book','Due in 12 days')"><div class="notice-dot" style="background:var(--pul)">📗</div><div class="notice-tx"><h5>Panchtantra Ki Kahaniya</h5><p>Issued: May 8 · Due: May 22</p><time>12 days left</time></div></div>
-        <div class="slbl">Reading History</div>
+        <div class="slbl" data-i18n="readingHistory">Reading History</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Harry Potter & the Philosopher's Stone</h5><p>Returned on time · Apr 28</p><time>Last month</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Malgudi Days — R.K. Narayan</h5><p>Returned on time · Apr 10</p><time>Last month</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">⚠️</div><div class="notice-tx"><h5>Discovery of India — Nehru</h5><p>Returned 3 days late · Fine: ₹15</p><time>2 months ago</time></div></div>
-        <div class="slbl">Library Stats</div>
+        <div class="slbl" data-i18n="libraryStats">Library Stats</div>
         <div style="padding:0 20px 16px;display:flex;gap:8px">
           <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font);color:var(--or)">12</div><div style="font-size:10px;color:var(--tx3)">Books Read</div></div>
           <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font);color:var(--mn)">2</div><div style="font-size:10px;color:var(--tx3)">Currently Issued</div></div>
@@ -606,7 +606,7 @@
       <!-- HOLIDAYS -->
       <div class="sub-panel" id="panel-holidays">
         <div class="sp-hdr"><div class="sp-back" onclick="closePanel('holidays')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Holiday Calendar</h3></div>
-        <div class="slbl">Upcoming Holidays</div>
+        <div class="slbl" data-i18n="upcomingHolidays">Upcoming Holidays</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🏖️</div><div class="notice-tx"><h5>Summer Vacation</h5><p>May 20 – June 30 · 42 days</p><time>8 days away</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🕉</div><div class="notice-tx"><h5>Eid-ul-Adha</h5><p>June 7 · Saturday</p><time>26 days</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--pul)">🇮🇳</div><div class="notice-tx"><h5>Independence Day</h5><p>August 15 · Friday · Flag Hoisting</p><time>3 months</time></div></div>
@@ -629,10 +629,10 @@
             <div style="flex:1;background:var(--s1);border:1px solid var(--br);border-radius:var(--r12);padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;font-family:var(--font);color:var(--gd)">4</div><div style="font-size:10px;color:var(--tx3)">Late</div></div>
           </div>
         </div>
-        <div class="slbl">This Week</div>
+        <div class="slbl" data-i18n="thisWeek">This Week</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Monday, May 11</h5><p>Present · Arrived 7:25 AM</p></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Tuesday, May 12</h5><p>Present · Arrived 7:20 AM</p></div></div>
-        <div class="slbl">Recent Absences</div>
+        <div class="slbl" data-i18n="recentAbsences">Recent Absences</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">❌</div><div class="notice-tx"><h5>Friday, May 2</h5><p>Absent · Reason: Fever (parent notified)</p></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--rdl)">❌</div><div class="notice-tx"><h5>Thursday, May 1</h5><p>Absent · Reason: Fever (parent notified)</p></div></div>
         <div style="padding:12px 20px"><button class="btn bgh" style="width:100%;font-size:12px" onclick="toast('📝','Leave','Opening leave application form...')">Apply for Leave 📝</button></div>
@@ -640,11 +640,11 @@
       <!-- DIARY -->
       <div class="sub-panel" id="panel-diary">
         <div class="sp-hdr"><div class="sp-back" onclick="closePanel('diary')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Student Diary</h3></div>
-        <div class="slbl">Today's Diary</div>
+        <div class="slbl" data-i18n="todaysDiary">Today's Diary</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">📐</div><div class="notice-tx"><h5>Maths Homework</h5><p>Ch 12 Ex 12.3 — Q 1 to 10 · Due tomorrow</p><time>Ms. Vijaya</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">🔬</div><div class="notice-tx"><h5>Science — Bring Materials</h5><p>Bring magnifying glass + mirror for light chapter</p><time>Mr. Kumar</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--pul)">📝</div><div class="notice-tx"><h5>English Essay</h5><p>"My Favourite Festival" — 200 words · Due Friday</p><time>Ms. Sharma</time></div></div>
-        <div class="slbl">Teacher Remarks</div>
+        <div class="slbl" data-i18n="teacherRemarks">Teacher Remarks</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--gdl)">⭐</div><div class="notice-tx"><h5>Excellent work in Math test!</h5><p>Ms. Vijaya · Scored 95/100 — keep it up!</p><time>Today</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">👍</div><div class="notice-tx"><h5>Good participation in Science</h5><p>Mr. Kumar · Active in lab experiment</p><time>Yesterday</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">📖</div><div class="notice-tx"><h5>Improve Hindi handwriting</h5><p>Ms. Ritu · Practice 1 page daily</p><time>3 days ago</time></div></div>
@@ -653,7 +653,7 @@
       <div class="sub-panel" id="panel-complaint">
         <div class="sp-hdr"><div class="sp-back" onclick="closePanel('complaint')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div><h3>Complaints</h3></div>
         <div style="padding:16px 20px"><button class="btn bor" style="width:100%;font-size:12px" onclick="toast('🎫','New Ticket','Opening complaint form...')">+ Raise New Complaint 🎫</button></div>
-        <div class="slbl">Your Tickets</div>
+        <div class="slbl" data-i18n="yourTickets">Your Tickets</div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Bus late by 20 mins daily</h5><p>Resolved · Route 5 timing adjusted to 7:15 AM</p><time>3 days ago · #TKT-041</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--orl)">🔄</div><div class="notice-tx"><h5>Canteen food quality concern</h5><p>In Progress · Admin is reviewing vendor</p><time>1 week ago · #TKT-038</time></div></div>
         <div class="notice-item"><div class="notice-dot" style="background:var(--mnl)">✅</div><div class="notice-tx"><h5>Broken bench in Class 5B</h5><p>Resolved · Replaced on April 28</p><time>2 weeks ago · #TKT-035</time></div></div>
@@ -762,7 +762,7 @@
         </div>
 
         <!-- At-Risk Students -->
-        <div class="slbl">⚠️ At-Risk Students</div>
+        <div class="slbl" data-i18n="atRiskStudents">⚠️ At-Risk Students</div>
         <div class="t-atrisk-list">
           <div class="t-atrisk" onclick="toast('📞','Call Parent','Calling Kavita S. (Rohit\'s mother)...')"><div class="av av32" style="background:var(--rd)">RS</div><div class="t-atrisk-info"><div class="t-atrisk-name">Rohit Sinha</div><div class="t-atrisk-reason">Score dropped 45% → 32% · Absent 8 days</div></div><span class="chip crd" style="font-size:9px">Critical</span></div>
           <div class="t-atrisk" onclick="toast('📞','Call Parent','Calling Santosh R. (Anita\'s father)...')"><div class="av av32" style="background:var(--rd)">AD</div><div class="t-atrisk-info"><div class="t-atrisk-name">Anita Devi</div><div class="t-atrisk-reason">No homework in 2 weeks · Score 38%</div></div><span class="chip crd" style="font-size:9px">Critical</span></div>
@@ -771,7 +771,7 @@
         </div>
 
         <!-- Subject-wise Performance -->
-        <div class="slbl">Subject-wise Class Average</div>
+        <div class="slbl" data-i18n="classAverage">Subject-wise Class Average</div>
         <div class="t-subj-list">
           <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--orl)">📐</div><div class="t-subj-info"><div class="t-subj-name">Mathematics</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:82%;background:var(--or)"></div></div></div><div class="t-subj-pct" style="color:var(--or)">82%</div></div>
           <div class="t-subj-row"><div class="t-subj-ico" style="background:var(--mnl)">🔬</div><div class="t-subj-info"><div class="t-subj-name">Science</div><div class="t-subj-bar"><div class="t-subj-fill" style="width:76%;background:var(--mn)"></div></div></div><div class="t-subj-pct" style="color:var(--mn)">76%</div></div>
@@ -830,7 +830,7 @@
         <div class="vnwave" id="vnw"></div>
         <span style="font-size:11px;color:var(--tx3)">Voice note in Hindi · हिंदी</span>
       </div>
-      <div class="slbl">Direct Messages</div>
+      <div class="slbl" data-i18n="directMessages">Direct Messages</div>
       <div class="dmrow" onclick="openChat()">
         <div class="av av40 avt">SV</div>
         <div class="dminf"><div class="dmnm">Ms. Vijaya · Class 5B</div><div class="dmpv unrd">Arjun did wonderfully today! 🌟</div></div>
@@ -894,7 +894,7 @@
         </div>
 
         <!-- Upcoming Meetings -->
-        <div class="slbl">Upcoming Meetings</div>
+        <div class="slbl" data-i18n="upcomingMeetings">Upcoming Meetings</div>
         <div class="t-meetings">
           <div class="t-meet" onclick="toast('📹','Join','Opening Google Meet link...')"><div class="t-meet-date"><div class="t-meet-day">THU</div><div class="t-meet-dd">20</div></div><div class="t-meet-info"><div class="t-meet-name">Suneeta K. (Arjun's mother)</div><div class="t-meet-sub">10:00 AM · Video Call · 15 min</div></div><span class="chip cmn" style="font-size:9px">Confirmed</span></div>
           <div class="t-meet" onclick="toast('📹','Join','Opening Google Meet link...')"><div class="t-meet-date"><div class="t-meet-day">FRI</div><div class="t-meet-dd">21</div></div><div class="t-meet-info"><div class="t-meet-name">Rajesh P. (Priya's father)</div><div class="t-meet-sub">11:00 AM · Video Call · 15 min</div></div><span class="chip cmn" style="font-size:9px">Confirmed</span></div>
@@ -902,7 +902,7 @@
         </div>
 
         <!-- Parent DMs (Teacher POV) -->
-        <div class="slbl">Parent Messages</div>
+        <div class="slbl" data-i18n="parentMessages">Parent Messages</div>
         <div class="dmrow" onclick="openChat()">
           <div class="av av40 avp">SK</div>
           <div class="dminf"><div class="dmnm">Suneeta K. (Arjun's mother)</div><div class="dmpv unrd">Thank you! Can I book a PTM? 🙏</div></div>
@@ -978,10 +978,10 @@
           <p>Keep engaging daily to maintain your streak and stay in the top 10%!</p>
         </div>
       </div>
-      <div class="slbl">Preferences</div>
+      <div class="slbl" data-i18n="preferences">Preferences</div>
       <div class="prefsec">
         <div class="prefrow">
-          <span class="preflbl">Language</span>
+          <span class="preflbl" data-i18n="language">Language</span>
           <div class="langpill">
             <div class="lngbtn active" onclick="setLang(this,'Hindi')">हिंदी</div>
             <div class="lngbtn" onclick="setLang(this,'English')">English</div>
@@ -989,47 +989,47 @@
           </div>
         </div>
         <div class="prefrow">
-          <span class="preflbl">WhatsApp Alerts</span>
+          <span class="preflbl" data-i18n="whatsapp">WhatsApp Alerts</span>
           <div class="tgl on" onclick="this.classList.toggle('on');toast('💬','WhatsApp',this.classList.contains('on')?'Alerts enabled':'Alerts paused')"><div class="tglth"></div></div>
         </div>
         <div class="prefrow">
-          <span class="preflbl">Push Notifications</span>
+          <span class="preflbl" data-i18n="push">Push Notifications</span>
           <div class="tgl on" onclick="this.classList.toggle('on');toast('🔔','Notifications',this.classList.contains('on')?'Enabled':'Muted')"><div class="tglth"></div></div>
         </div>
         <div class="prefrow">
-          <span class="preflbl">Daily Digest (8 AM)</span>
+          <span class="preflbl" data-i18n="dailyDigest">Daily Digest (8 AM)</span>
           <div class="tgl" onclick="this.classList.toggle('on');toast('📰','Daily Digest',this.classList.contains('on')?'Enabled for 8 AM':'Disabled')"><div class="tglth"></div></div>
         </div>
         <div class="prefrow">
-          <span class="preflbl">Child's School</span>
+          <span class="preflbl" data-i18n="childSchool">Child's School</span>
           <span class="prefval" onclick="toast('🏫','School','Govt. Primary School No. 4, Sector 12')">GPS No. 4 ›</span>
         </div>
         <div class="prefrow">
-          <span class="preflbl">Linked Children</span>
+          <span class="preflbl" data-i18n="linkedChildren">Linked Children</span>
           <span class="prefval" onclick="toast('👶','Add Child','Scan school QR code to link another child')">Arjun · + Add ›</span>
         </div>
       </div>
-      <div class="slbl">Account</div>
+      <div class="slbl" data-i18n="account">Account</div>
       <div class="prefsec">
         <div class="prefrow">
-          <span class="preflbl">Phone Number</span>
+          <span class="preflbl" data-i18n="phoneNumber">Phone Number</span>
           <span class="prefval">+91 98765 43210</span>
         </div>
         <div class="prefrow">
-          <span class="preflbl">Privacy & Data</span>
+          <span class="preflbl" data-i18n="privacy">Privacy & Data</span>
           <span class="prefval" onclick="toast('🔒','Privacy','DPDP Act 2023 compliant · Data never sold')">View Policy ›</span>
         </div>
         <div class="prefrow">
-          <span class="preflbl">Help & Support</span>
+          <span class="preflbl" data-i18n="helpSupport">Help & Support</span>
           <span class="prefval" onclick="toast('🆘','Support','Opening helpdesk in Hindi...')">Get Help ›</span>
         </div>
         <div class="prefrow" style="border-bottom:none">
-          <span class="preflbl" style="color:var(--rd)">Sign Out</span>
+          <span class="preflbl" style="color:var(--rd)" data-i18n="signout">Sign Out</span>
           <span class="prefval" style="color:var(--rd)" onclick="toast('👋','Signed Out','See you tomorrow!')">Sign Out ›</span>
         </div>
       </div>
       <div id="tprof" style="display:none">
-        <div class="slbl">Teacher Tools</div>
+        <div class="slbl" data-i18n="teacherTools">Teacher Tools</div>
         <div class="prefsec">
           <div class="prefrow">
             <span class="preflbl">Class Assignment</span>
@@ -1071,7 +1071,7 @@
           </div>
         </div>
         <!-- My Classes -->
-        <div class="slbl">My Classes</div>
+        <div class="slbl" data-i18n="myClasses">My Classes</div>
         <div class="t-classes">
           <div class="t-class" onclick="toast('📚','Class 5B','Switching to Class 5B dashboard...')"><div class="t-class-ico" style="background:var(--orl)">5B</div><div class="t-class-info"><div class="t-class-name">Class 5B · Mathematics</div><div class="t-class-sub">42 students · Class Teacher · 82% avg</div></div><span class="chip cor" style="font-size:9px">Active</span></div>
           <div class="t-class" onclick="toast('📚','Class 5A','Switching to Class 5A dashboard...')"><div class="t-class-ico" style="background:var(--pul)">5A</div><div class="t-class-info"><div class="t-class-name">Class 5A · Mathematics</div><div class="t-class-sub">38 students · Subject Teacher · 78% avg</div></div></div>
@@ -1079,7 +1079,7 @@
           <div class="t-class" onclick="toast('📚','Class 6B','Switching to Class 6B dashboard...')"><div class="t-class-ico" style="background:var(--gdl)">6B</div><div class="t-class-info"><div class="t-class-name">Class 6B · Mathematics</div><div class="t-class-sub">40 students · Subject Teacher · 74% avg</div></div></div>
         </div>
         <!-- Teacher Settings -->
-        <div class="slbl">Teacher Settings</div>
+        <div class="slbl" data-i18n="teacherSettings">Teacher Settings</div>
         <div class="prefsec">
           <div class="prefrow"><span class="preflbl">Auto-Translate Posts</span><div class="tgl on" onclick="this.classList.toggle('on');toast('🌐','Auto-Translate',this.classList.contains('on')?'Posts auto-translated to Hindi':'Auto-translate disabled')"><div class="tglth"></div></div></div>
           <div class="prefrow"><span class="preflbl">Meeting Duration</span><span class="prefval" onclick="toast('⏱️','Duration','Set to 15 minutes per slot')">15 min ›</span></div>
@@ -1087,7 +1087,7 @@
           <div class="prefrow"><span class="preflbl">Export Class Data</span><span class="prefval" onclick="toast('📊','Exported','class_5b_report.csv downloaded')">CSV Export ›</span></div>
           <div class="prefrow"><span class="preflbl">Parent Read Receipts</span><div class="tgl on" onclick="this.classList.toggle('on')"><div class="tglth"></div></div></div>
         </div>
-        <div class="slbl">Account</div>
+        <div class="slbl" data-i18n="account">Account</div>
         <div class="prefsec">
           <div class="prefrow"><span class="preflbl">Employee ID</span><span class="prefval">TCH-2018-042</span></div>
           <div class="prefrow"><span class="preflbl">Phone Number</span><span class="prefval">+91 99876 54321</span></div>

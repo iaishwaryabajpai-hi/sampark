@@ -198,7 +198,17 @@ const i18n={
     yourStory:'Your story',preferences:'Preferences',language:'Language',account:'Account',
     whatsapp:'WhatsApp Alerts',push:'Push Notifications',darkMode:'Dark Mode',signout:'Sign Out',
     bookMeeting:'Book a Video Meeting',typeMsg:'Type a message...',
-    parent:'Parent',teacher:'Teacher',student:'Student'
+    parent:'Parent',teacher:'Teacher',student:'Student',
+    quickActions:'Quick Actions',todaySchedule:'Today\'s Schedule',pendingTasks:'Pending Tasks',
+    recentActivity:'Your Recent Activity',recentEvents:'Recent Events',paymentHistory:'Payment History',
+    routeDetails:'Route Details',dropSchedule:'Drop Schedule',currentlyIssued:'Currently Issued',
+    readingHistory:'Reading History',libraryStats:'Library Stats',upcomingHolidays:'Upcoming Holidays',
+    thisWeek:'This Week',recentAbsences:'Recent Absences',todaysDiary:'Today\'s Diary',
+    teacherRemarks:'Teacher Remarks',yourTickets:'Your Tickets',atRiskStudents:'⚠️ At-Risk Students',
+    classAverage:'Subject-wise Class Average',directMessages:'Direct Messages',upcomingMeetings:'Upcoming Meetings',
+    parentMessages:'Parent Messages',teacherTools:'Teacher Tools',myClasses:'My Classes',teacherSettings:'Teacher Settings',
+    phoneNumber:'Phone Number',privacy:'Privacy & Data',helpSupport:'Help & Support',
+    dailyDigest:'Daily Digest (8 AM)',childSchool:'Child\'s School',linkedChildren:'Linked Children'
   },
   Hindi:{
     feed:'फ़ीड',community:'समुदाय',progress:'प्रगति',messages:'संदेश',play:'खेल',profile:'प्रोफ़ाइल',
@@ -209,7 +219,17 @@ const i18n={
     yourStory:'आपकी कहानी',preferences:'प्राथमिकताएं',language:'भाषा',account:'खाता',
     whatsapp:'व्हाट्सएप अलर्ट',push:'पुश नोटिफिकेशन',darkMode:'डार्क मोड',signout:'साइन आउट',
     bookMeeting:'वीडियो मीटिंग बुक करें',typeMsg:'संदेश लिखें...',
-    parent:'अभिभावक',teacher:'शिक्षक',student:'छात्र'
+    parent:'अभिभावक',teacher:'शिक्षक',student:'छात्र',
+    quickActions:'त्वरित कार्रवाइयां',todaySchedule:'आज की समय-सारणी',pendingTasks:'लंबित कार्य',
+    recentActivity:'आपकी हाल की गतिविधि',recentEvents:'हाल की घटनाएँ',paymentHistory:'भुगतान इतिहास',
+    routeDetails:'मार्ग विवरण',dropSchedule:'ड्रॉप शेड्यूल',currentlyIssued:'वर्तमान में जारी',
+    readingHistory:'पढ़ने का इतिहास',libraryStats:'पुस्तकालय आँकड़े',upcomingHolidays:'आगामी छुट्टियाँ',
+    thisWeek:'इस सप्ताह',recentAbsences:'हाल की अनुपस्थिति',todaysDiary:'आज की डायरी',
+    teacherRemarks:'शिक्षक की टिप्पणी',yourTickets:'आपके टिकट',atRiskStudents:'⚠️ जोखिम वाले छात्र',
+    classAverage:'विषयवार कक्षा औसत',directMessages:'सीधे संदेश',upcomingMeetings:'आगामी बैठकें',
+    parentMessages:'अभिभावक संदेश',teacherTools:'शिक्षक उपकरण',myClasses:'मेरी कक्षाएं',teacherSettings:'शिक्षक सेटिंग्स',
+    phoneNumber:'फ़ोन नंबर',privacy:'गोपनीयता और डेटा',helpSupport:'मदद और समर्थन',
+    dailyDigest:'दैनिक सारांश (8 AM)',childSchool:'बच्चे का स्कूल',linkedChildren:'जुड़े हुए बच्चे'
   },
   Marathi:{
     feed:'फीड',community:'समुदाय',progress:'प्रगती',messages:'संदेश',play:'खेळ',profile:'प्रोफाइल',
@@ -220,7 +240,17 @@ const i18n={
     yourStory:'तुमची गोष्ट',preferences:'प्राधान्ये',language:'भाषा',account:'खाते',
     whatsapp:'व्हाट्सएप अलर्ट',push:'पुश सूचना',darkMode:'डार्क मोड',signout:'साइन आउट',
     bookMeeting:'व्हिडिओ मीटिंग बुक करा',typeMsg:'संदेश लिहा...',
-    parent:'पालक',teacher:'शिक्षक',student:'विद्यार्थी'
+    parent:'पालक',teacher:'शिक्षक',student:'विद्यार्थी',
+    quickActions:'त्वरित क्रिया',todaySchedule:'आजचे वेळापत्रक',pendingTasks:'प्रलंबित कामे',
+    recentActivity:'तुमची अलीकडील क्रियाकलाप',recentEvents:'अलीकडील घटना',paymentHistory:'पेमेंट इतिहास',
+    routeDetails:'मार्ग तपशील',dropSchedule:'ड्रॉप शेड्यूल',currentlyIssued:'सध्या जारी',
+    readingHistory:'वाचन इतिहास',libraryStats:'वाचनालयाची आकडेवारी',upcomingHolidays:'आगामी सुट्ट्या',
+    thisWeek:'या आठवड्यात',recentAbsences:'अलीकडील अनुपस्थिती',todaysDiary:'आजची डायरी',
+    teacherRemarks:'शिक्षकांचे शेरे',yourTickets:'तुमची तिकिटे',atRiskStudents:'⚠️ जोखमीचे विद्यार्थी',
+    classAverage:'विषयानुसार वर्ग सरासरी',directMessages:'थेट संदेश',upcomingMeetings:'आगामी बैठका',
+    parentMessages:'पालकांचे संदेश',teacherTools:'शिक्षक साधने',myClasses:'माझे वर्ग',teacherSettings:'शिक्षक सेटिंग्ज',
+    phoneNumber:'फोन नंबर',privacy:'गोपनीयता आणि डेटा',helpSupport:'मदत आणि समर्थन',
+    dailyDigest:'दैनिक सारांश (8 AM)',childSchool:'मुलाची शाळा',linkedChildren:'लिंक केलेली मुले'
   }
 };
 function setLang(btn,lang){

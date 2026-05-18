@@ -356,7 +356,149 @@ function flipCard(card) {
   }
 }
 
-window.addEventListener('DOMContentLoaded',()=>{buildWave('vnw');buildWave('vwv');buildChart();animateXP();initMemoryGame();});
+window.addEventListener('DOMContentLoaded',()=>{
+  buildWave('vnw');
+  buildWave('vwv');
+  buildChart();
+  animateXP();
+  initMemoryGame();
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* 🎬 SCROLL REVEAL SYSTEM                               */
+  /* ═══════════════════════════════════════════════════════ */
+  function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    const selectors = [
+      '.post', '.evbanner', '.strkcard', '.chartcard', '.dashcard',
+      '.lbcard', '.profscore', '.meetcta', '.vnui', '.pollcard',
+      '.comp-banner', '.sechdr', '.slbl', '.notice-item',
+      '.dmrow', '.chanrow', '.syl-item', '.t-task', '.t-meet',
+      '.t-hw', '.t-class', '.t-sched-row', '.t-actrow',
+      '.t-atrisk', '.t-greeting', '.proghero', '.profhero',
+      '.comm-hero', '.wasync'
+    ];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach((el, idx) => {
+        if (!el.classList.contains('reveal')) {
+          el.classList.add('reveal');
+          el.style.transitionDelay = `${Math.min(idx * 0.04, 0.4)}s`;
+        }
+        observer.observe(el);
+      });
+    });
+
+    document.querySelectorAll('.explore-grid, .badgegrid, .club-grid, .t-actions').forEach(grid => {
+      if (!grid.classList.contains('reveal-stagger')) grid.classList.add('reveal-stagger');
+      observer.observe(grid);
+    });
+
+    document.querySelectorAll('.evcard, .clubcard, .badgecard, .game-card, .exp-btn').forEach(card => {
+      if (!card.classList.contains('reveal-scale') && !card.parentElement.classList.contains('reveal-stagger')) {
+        card.classList.add('reveal-scale');
+        observer.observe(card);
+      }
+    });
+  }
+  setTimeout(initScrollReveal, 300);
+
+  /* Re-init on tab switch */
+  const origST = switchTab;
+  switchTab = function(id) {
+    origST(id);
+    setTimeout(() => {
+      initScrollReveal();
+      if (id === 'prog') { buildChart(); animateXP(); }
+    }, 100);
+  };
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* 🎬 CLICK RIPPLE EFFECT                                */
+  /* ═══════════════════════════════════════════════════════ */
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.btn, .hbtn, .abtn, .ni, .exp-btn, .rp, .clubcard, .evcard, .notice-item, .t-act, .chanrow, .dmrow');
+    if (!target) return;
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple-effect';
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+    target.style.position = target.style.position || 'relative';
+    target.style.overflow = 'hidden';
+    target.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* 🎬 SCROLL PROGRESS BAR                                */
+  /* ═══════════════════════════════════════════════════════ */
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  progressBar.style.width = '0%';
+  document.body.appendChild(progressBar);
+  
+  const updateProgress = () => {
+    const activeScr = document.querySelector('.scr.active');
+    if (!activeScr) return;
+    const scrollTop = activeScr.scrollTop;
+    const scrollHeight = activeScr.scrollHeight - activeScr.clientHeight;
+    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+  };
+  document.querySelectorAll('.scr').forEach(scr => {
+    scr.addEventListener('scroll', updateProgress, { passive: true });
+  });
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* 🎬 SMOOTH NUMBER COUNTER                              */
+  /* ═══════════════════════════════════════════════════════ */
+  function animateCounters() {
+    document.querySelectorAll('.statv, .t-qsv').forEach(el => {
+      const text = el.textContent.trim();
+      const match = text.match(/^(\d+)/);
+      if (!match || el.dataset.counted) return;
+      el.dataset.counted = 'true';
+      const target = parseInt(match[1]);
+      const suffix = text.replace(match[1], '');
+      const duration = 800;
+      const start = performance.now();
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * ease) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  setTimeout(animateCounters, 500);
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* 🎬 KEYBOARD FOR 2048                                  */
+  /* ═══════════════════════════════════════════════════════ */
+  document.addEventListener('keydown', (e) => {
+    const map = { ArrowLeft: 'Left', ArrowRight: 'Right', ArrowUp: 'Up', ArrowDown: 'Down' };
+    if (map[e.key]) { e.preventDefault(); move2048(map[e.key]); }
+  });
+
+  /* Smooth scroll-to-top on active nav click */
+  document.querySelectorAll('.ni').forEach(ni => {
+    ni.addEventListener('click', () => {
+      const activeScr = document.querySelector('.scr.active');
+      if (activeScr) activeScr.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+});
 
 function rsvpEvent(card, name){
   const btn = card.querySelector('.ev-rsvp');
